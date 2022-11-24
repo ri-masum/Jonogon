@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "709136843066",
+    "project_id": "jonogon-e13d3",
+    "storage_bucket": "jonogon-e13d3.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:709136843066:android:2b9eb9e70d5a4a6638d003",
+        "android_client_info": {
+          "package_name": "com.masum.jonogon"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "709136843066-erqgu5uumabh2n0taubjd2e2qrc0ld50.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCVuuk8AhC6Z90x8EpRMnOQkNBcTgeUO_M"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "709136843066-erqgu5uumabh2n0taubjd2e2qrc0ld50.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
