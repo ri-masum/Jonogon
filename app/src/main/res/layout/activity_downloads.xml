@@ -28,6 +28,7 @@
             android:textSize="20dp"
             />
         <LinearLayout
+            android:id="@+id/bcard_download"
             android:layout_width="50dp"
 
             android:layout_height="50dp"
@@ -57,6 +58,7 @@
             android:textSize="20dp"
             />
         <LinearLayout
+            android:id="@+id/NID_download"
             android:layout_width="50dp"
 
             android:layout_height="50dp"

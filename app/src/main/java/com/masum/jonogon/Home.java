@@ -27,6 +27,8 @@ public class Home extends AppCompatActivity {
         b1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Toast.makeText(getApplicationContext(),"opening Registation",Toast.LENGTH_SHORT).show();
+
                 Intent intent=new Intent(Home.this,Registation_1.class);
                 startActivity(intent);
             }
@@ -35,6 +37,8 @@ public class Home extends AppCompatActivity {
         b2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Toast.makeText(getApplicationContext(),"opening Status",Toast.LENGTH_SHORT).show();
+
                 Intent intent=new Intent(Home.this,Status.class);
                 startActivity(intent);
 
@@ -44,6 +48,8 @@ public class Home extends AppCompatActivity {
         b3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Toast.makeText(getApplicationContext(),"opening Download",Toast.LENGTH_SHORT).show();
+
                 Intent intent=new Intent(Home.this,Downloads.class);
                 startActivity(intent);
             }
@@ -51,6 +57,8 @@ public class Home extends AppCompatActivity {
         b4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Toast.makeText(getApplicationContext(),"opening About Us",Toast.LENGTH_SHORT).show();
+
                 Intent intent=new Intent(Home.this,Info.class);
                 startActivity(intent);
             }
