@@ -4,20 +4,21 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Home1"
-    android:background="#C581D1"
+    android:background="@color/cardview_light_background"
+    tools:context=".Info">
 
-    >
+
     <TextView
+
+        android:layout_gravity="center"
+        android:gravity="center"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
 
-        android:text="Home"
-
+        android:text="This page will contain about our app info"
         android:textColor="@color/black"
-        android:textSize="40dp"
-        android:layout_gravity="center"
-        android:textAlignment="center"
-        />
+        android:textSize="20dp"
+        android:textStyle="bold"
 
+        />
 </LinearLayout>

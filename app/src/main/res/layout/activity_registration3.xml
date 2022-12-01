@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="#EEEFDA"
+    android:orientation="vertical"
+    tools:context=".Registration_3">
+
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="120dp"
+
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Permanent Address:"
+            android:textStyle="bold"
+            android:textColor="#050505"
+            android:textSize="20dp"
+
+            />
+
+        <EditText
+            android:id="@+id/permanent_address"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="20dp"
+            android:background="@drawable/box"
+            android:baselineAligned="false"
+            android:hint="Address"
+            android:inputType="text"
+            android:padding="30dp"
+            android:textAlignment="center"
+            android:textColor="#613636"
+            android:layout_marginLeft="30dp"
+            android:textColorHint="@color/black" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Present Address:"
+            android:textStyle="bold"
+            android:textColor="#050505"
+            android:textSize="20dp"
+
+            />
+
+        <EditText
+            android:id="@+id/present_address"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="20dp"
+            android:background="@drawable/box"
+            android:baselineAligned="false"
+            android:hint="Address"
+            android:inputType="textPostalAddress"
+            android:padding="30dp"
+            android:textAlignment="center"
+            android:textColor="#613636"
+            android:layout_marginLeft="60dp"
+            android:textColorHint="@color/black" />
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Contract Phone:"
+            android:textColor="#050505"
+            android:textStyle="bold"
+
+            android:textSize="20dp"
+
+            />
+
+        <EditText
+            android:id="@+id/number"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="20dp"
+            android:background="@drawable/box"
+            android:baselineAligned="false"
+            android:hint="Number"
+            android:inputType="phone"
+            android:padding="7dp"
+            android:textAlignment="center"
+            android:textColor="#613636"
+            android:layout_marginLeft="70dp"
+            android:textColorHint="@color/black" />
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+
+        android:gravity="center">
+
+
+        <android.widget.Button
+            android:id="@+id/submit"
+            android:layout_marginTop="100dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/box"
+            android:text="Submit"
+            android:textColor="@color/black"
+            android:layout_marginLeft="288dp"
+            android:textAlignment="center"
+            tools:ignore="RtlCompat" />
+    </LinearLayout>
+    </LinearLayout>
+
+
+
+

@@ -10,46 +10,37 @@
 
     android:background="#EEEFDA"
     >
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+
+        android:background="@drawable/layoutbox">
+
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="330dp"
+        android:layout_height="180dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/box"
+        android:layout_gravity="center">
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:scaleType="fitXY"
+
+
+            android:src="@drawable/kidtoteen1"/>
+
+    </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
-
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Scarch here..."
-            android:padding="10dp"
-            android:gravity="center"
-            android:background="@drawable/box"
-            android:layout_marginTop="80dp"
-            android:layout_marginLeft="80dp"
-            android:layout_marginRight="80dp"
-            android:textSize="15dp"
-            android:inputType="text"
-            android:textColorHint="@color/black"
-
-
-            />
-        <TextView
-            android:id="@+id/bscarch"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Scarch"
-            android:padding="10dp"
-            android:background="@drawable/box"
-            android:layout_marginTop="20dp"
-            android:layout_marginLeft="200dp"
-            android:layout_marginRight="80dp"
-            android:textAlignment="center"
-            android:layout_marginBottom="20dp"
-            android:textColor="@color/black"
-
-
-
-            />
-    </LinearLayout>
+        android:orientation="vertical"/>
 
     <LinearLayout
 
@@ -64,7 +55,7 @@
 
 
         <LinearLayout
-            android:id="@+id/home"
+            android:id="@+id/registation"
             android:layout_width="150dp"
             android:layout_height="100dp"
             android:orientation="vertical"
@@ -81,7 +72,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
-                android:text="Home"
+                android:text="Registation"
                 android:textColor="@color/black"
                 android:textSize="25dp"
                 android:textAlignment="center"
@@ -94,7 +85,7 @@
 
         </LinearLayout>
         <LinearLayout
-            android:id="@+id/profile"
+            android:id="@+id/status"
             android:layout_marginLeft="40dp"
             android:layout_width="150dp"
             android:layout_height="100dp"
@@ -106,14 +97,14 @@
                 android:layout_marginRight="80dp"
                 android:layout_marginLeft="5dp"
                 android:layout_marginTop="10dp"
-                android:src="@drawable/ic_profile"
+                android:src="@drawable/click"
 
 
                 />
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
-                android:text="Profile"
+                android:text="Status"
                 android:textColor="@color/black"
                 android:textSize="25dp"
                 android:textAlignment="center"
@@ -135,7 +126,7 @@
 
 
         <LinearLayout
-            android:id="@+id/mail"
+            android:id="@+id/download"
             android:layout_width="150dp"
             android:layout_height="100dp"
             android:orientation="vertical"
@@ -147,14 +138,14 @@
                 android:layout_marginLeft="5dp"
                 android:layout_marginTop="5dp"
                 android:layout_marginRight="90dp"
-                android:src="@drawable/maillogo"
+                android:src="@drawable/download"
 
                 />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
-                android:text="Mail"
+                android:text="Download"
                 android:textColor="@color/black"
                 android:textSize="25dp"
                 android:textAlignment="center"
@@ -167,7 +158,7 @@
 
         </LinearLayout>
         <LinearLayout
-            android:id="@+id/share"
+            android:id="@+id/info"
             android:layout_marginLeft="40dp"
             android:layout_width="150dp"
             android:layout_height="100dp"
@@ -179,14 +170,14 @@
                 android:layout_marginRight="90dp"
                 android:layout_marginLeft="5dp"
 
-                android:src="@drawable/sharelogo"
+                android:src="@drawable/info"
 
 
                 />
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
-                android:text="Share"
+                android:text="Info"
                 android:textColor="@color/black"
                 android:textSize="25dp"
                 android:textAlignment="center"
@@ -201,6 +192,7 @@
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
+
         android:layout_height="wrap_content">
         <TextView
             android:layout_width="match_parent"
@@ -208,7 +200,8 @@
             android:text="© masoom"
             android:textColor="@color/black"
             android:gravity="center"
-            android:layout_marginTop="280dp"
+            android:layout_marginTop="180dp"
+
 
             />
     </LinearLayout>

@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="#EEEFDA"
+    android:orientation="vertical"
+    tools:context=".Registation_2">
+
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="80dp"
+
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Date_Of_Birth:"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:textSize="20dp"
+
+            />
+
+        <EditText
+            android:id="@+id/dob"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="20dp"
+            android:background="@drawable/box"
+            android:baselineAligned="false"
+            android:hint="DOB"
+            android:inputType="text"
+            android:padding="7dp"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:layout_marginLeft="60dp"
+            android:textColorHint="@color/black" />
+
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Gender:"
+            android:textColor="#050505"
+            android:textSize="20dp"
+
+            android:textStyle="bold"
+
+            />
+        <RadioGroup
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginLeft="115dp"
+
+           >
+
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Male"
+                android:textColor="@color/black"
+                />
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Female"
+                android:textColor="@color/black"
+
+
+                />
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Other"
+                android:textColor="@color/black"
+
+                />
+        </RadioGroup>
+
+<!--        <EditText-->
+<!--            android:id="@+id/gender"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginRight="20dp"-->
+<!--            android:background="#d9d9d9"-->
+<!--            android:baselineAligned="false"-->
+<!--            android:hint="male"-->
+<!--            android:inputType="text"-->
+<!--            android:padding="7dp"-->
+<!--            android:textAlignment="center"-->
+<!--            android:textColor="#613636"-->
+<!--            android:layout_marginLeft="110dp"-->
+<!--            android:textColorHint="@color/black" />-->
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Place of Birth:"
+            android:textColor="#050505"
+            android:textSize="20dp"
+            android:textStyle="bold"
+
+            />
+
+        <EditText
+            android:id="@+id/birthplace"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="20dp"
+            android:background="@drawable/box"
+            android:baselineAligned="false"
+            android:hint="Place Name"
+
+            android:inputType="text"
+            android:padding="7dp"
+            android:textAlignment="center"
+            android:textColor="#613636"
+            android:layout_marginLeft="58dp"
+            android:textColorHint="@color/black" />
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:gravity="center">
+
+
+        <android.widget.Button
+            android:id="@+id/next2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="289dp"
+            android:layout_gravity="bottom"
+            android:layout_marginTop="100dp"
+            android:layout_marginRight="25dp"
+            android:background="@drawable/box"
+            android:backgroundTint="#43AAD8"
+
+            android:textColor="@color/black"
+            android:text="Next"
+            android:textAlignment="center"
+            tools:ignore="RtlCompat" />
+    </LinearLayout>
+
+
+
+
+
+</LinearLayout>
