@@ -4,6 +4,8 @@
     android:layout_height="match_parent"
     xmlns:tools="http://schemas.android.com/tools"
     android:background="#EEEFDA"
+    android:padding="30dp"
+
     android:orientation="vertical"
     tools:context=".Registration_3">
 
@@ -38,8 +40,8 @@
             android:hint="Address"
             android:inputType="text"
             android:padding="30dp"
-            android:textAlignment="center"
             android:textColor="#613636"
+            android:textAlignment="center"
             android:layout_marginLeft="30dp"
             android:textColorHint="@color/black" />
 
@@ -132,7 +134,7 @@
             android:background="@drawable/box"
             android:text="Submit"
             android:textColor="@color/black"
-            android:layout_marginLeft="288dp"
+            android:layout_marginLeft="240dp"
             android:textAlignment="center"
             tools:ignore="RtlCompat" />
     </LinearLayout>

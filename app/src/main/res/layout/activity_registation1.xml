@@ -3,8 +3,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#EEEFDA"
+    android:background="#365B6D"
     android:orientation="vertical"
+    android:padding="50dp"
     tools:context=".Registation_1">
 
     <TextView
@@ -18,11 +19,14 @@
 
         />
 
+
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="60dp"
         >
+
 
         <TextView
             android:layout_width="wrap_content"
@@ -30,7 +34,7 @@
             android:gravity="center"
             android:text="Full Name:"
             android:textStyle="bold"
-            android:textColor="#613636"
+            android:textColor="@color/black"
             android:textSize="20dp"
 
             />
@@ -115,7 +119,8 @@
             android:layout_marginRight="20dp"
             android:background="@drawable/box"
             android:baselineAligned="false"
-            android:hint="Nationality"
+            android:hint="Bangladesh
+"
             android:inputType="text"
             android:padding="7dp"
             android:textAlignment="center"
@@ -191,7 +196,7 @@
             android:layout_marginRight="20dp"
             android:background="@drawable/box"
             android:baselineAligned="false"
-            android:hint="Nationality"
+            android:hint="Bangladesh"
             android:inputType="text"
             android:padding="7dp"
             android:textAlignment="center"
@@ -200,6 +205,10 @@
             android:textColorHint="@color/black" />
 
     </LinearLayout>
+    <ProgressBar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/progress"/>
 
     <android.widget.Button
         android:id="@+id/next1"
