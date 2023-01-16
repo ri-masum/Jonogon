@@ -55,6 +55,8 @@ public class Present_address extends AppCompatActivity {
         union=findViewById(R.id.present_union);
         gender=findViewById(R.id.gender);
         dob=findViewById(R.id.dob);
+
+
         name=findViewById(R.id.Baby_name);
         final Calendar calendar=Calendar.getInstance();//called Calendar
         dob.setOnClickListener(new View.OnClickListener() {// dob=date of birth
