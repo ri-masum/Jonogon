@@ -215,11 +215,33 @@ public class Present_address extends AppCompatActivity {
                 String PARPostalCode=getIntent().getExtras().getString("Baby_PARPostalcode","Baby_PARPostalcode");
 
 
+
+
+                //next day work will be process from here so lets take some rest 
+
+
                 //Database worksss
                 firebaseDatabase=FirebaseDatabase.getInstance();
+
                 DatabaseReference root=firebaseDatabase.getReference("Registration");
-                all_data helper= new all_data();
+                all_data helper= new all_data(//baby info PREsent
+                        PREName,PREDOB,PREGender,PREDistrict,PREUpazila,PREUnion,PREWard,PREHome,PREVillage,PREPostalCode,PREPostOffice,
+                        //Father & mother info
+                        FatherName,FatherNID,FatherBirthID,FatherBirthID,
+                        MotherName,MotherNID,MotherBirthID,MotherNation,
+                        Number,
+                        //parmanent address data
+                        PARDistrict,PARUpazila,PARWard,PARUnion,PARHome,PARVillage,PARPostOffice,PARPostalCode,
+
+                        //
+                        District,Upazila,Ward,Union,Home,Village,PostOffice,PostalCode);
+                root.child(PREName).setValue(helper);
+
                //work roise baki korar so korte hobe eikane kaj aro
+
+
+
+
 
 
 
@@ -253,17 +275,18 @@ public class Present_address extends AppCompatActivity {
                 intent.putExtra("Baby_PARPostOffice",PARPostOffice);
                 intent.putExtra("Baby_PARPostalCode",PARPostalCode);
                 //present address declearation
-                intent.putExtra("Baby_PARDistrict",PREDistrict);
-                intent.putExtra("Baby_PARUpazila",PREUpazila);
-                intent.putExtra("Baby_PARWard",PREWard);
-                intent.putExtra("Baby_PARUnion",PREUnion);
-                intent.putExtra("Baby_PARHome",PREHome);
-                intent.putExtra("Baby_PARVillage",PREVillage);
-                intent.putExtra("Baby_PARPostOffice",PREPostOffice);
-                intent.putExtra("Baby_PARPostalCode",PREPostalCode);
-                intent.putExtra("Baby_PARName",PREName);
-                intent.putExtra("Baby_PARDOB",PREDOB);
-                intent.putExtra("Baby_PARGender",PREGender);
+                intent.putExtra("Baby_PREDistrict",PREDistrict);
+                intent.putExtra("Baby_PREUpazila",PREUpazila);
+                intent.putExtra("Baby_PREWard",PREWard);
+                intent.putExtra("Baby_PREUnion",PREUnion);
+                intent.putExtra("Baby_PREHome",PREHome);
+                intent.putExtra("Baby_PREVillage",PREVillage);
+                intent.putExtra("Baby_PREPostOffice",PREPostOffice);
+                intent.putExtra("Baby_PREPostalCode",PREPostalCode);
+                intent.putExtra("Baby_PREName",PREName);
+                intent.putExtra("Baby_PREDOB",PREDOB);
+                intent.putExtra("Baby_PREGender",PREGender);
+
 
                 startActivity(intent);
             }

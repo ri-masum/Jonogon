@@ -4,6 +4,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -11,6 +13,9 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
+
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class Mother_Father_Info extends AppCompatActivity {
     Spinner spinner1,spinner2;
@@ -75,6 +80,7 @@ public class Mother_Father_Info extends AppCompatActivity {
             public void onClick(View v) {
 
 
+
                 String FatherName=fathername.getText().toString();
                 String FatherNID=fathernid.getText().toString();
                 String FatherBirthID=fatherbirthid.getText().toString();
@@ -121,5 +127,37 @@ public class Mother_Father_Info extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        //Mobile number validition check using regex
+        phone.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+                if (validMobile(phone.getText().toString())){
+                    submit.setEnabled(true);
+                }
+                else {
+                    submit.setEnabled(false );
+                    phone.setError("Invalid Mobile Number");
+                }
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+            }
+        });
+
+    }
+    //regex for mobile number validation
+    boolean validMobile(String input){
+        Pattern p=Pattern.compile("^\\+?(88)?0?1[3456789][0-9]{8}\\b");
+        Matcher m=p.matcher(input);
+        return  m.matches();
     }
 }

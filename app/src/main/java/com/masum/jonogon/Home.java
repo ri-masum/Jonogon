@@ -29,7 +29,7 @@ public class Home extends AppCompatActivity {
             public void onClick(View v) {
                 Toast.makeText(getApplicationContext(),"opening Registation",Toast.LENGTH_SHORT).show();
 
-                Intent intent=new Intent(Home.this,Registation_1.class);
+                Intent intent=new Intent(Home.this,Birthplace_address.class);
                 startActivity(intent);
             }
         });
