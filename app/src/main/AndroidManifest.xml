@@ -13,6 +13,42 @@
         android:theme="@style/Theme.AppCompat.DayNight.NoActionBar"
         tools:targetApi="31">
         <activity
+            android:name=".Parmanent_address"
+
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".LogIn"
+
+
+
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".Present_address"
+
+
+
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".Mother_Father_Info"
+
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name=".RegistationForm"
             android:exported="false">
             <meta-data
@@ -76,9 +112,7 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".LogIn"
-
-
+            android:name=".Birthplace_address"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
