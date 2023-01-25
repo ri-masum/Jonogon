@@ -15,7 +15,6 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseReference;
-import com.masum.jonogon.databinding.ActivityFetchBirthIdBinding;
 
 import com.google.firebase.database.FirebaseDatabase;
 

@@ -229,7 +229,7 @@ public class Present_address extends AppCompatActivity {
                 all_data helper= new all_data(//baby info PREsent
                         PREName,PREDOB,PREGender,PREDistrict,PREUpazila,PREUnion,PREWard,PREHome,PREVillage,PREPostalCode,PREPostOffice,
                         //Father & mother info
-                        FatherName,FatherNID,FatherBirthID,FatherBirthID,
+                        FatherName,FatherNID,FatherBirthID,FatherNation,
                         MotherName,MotherNID,MotherBirthID,MotherNation,
                         Number,
                         //parmanent address data
@@ -291,7 +291,10 @@ public class Present_address extends AppCompatActivity {
 
 
                 startActivity(intent);
+                Toast.makeText(Present_address.this,"Successfully Registerd",Toast.LENGTH_SHORT).show();
+
             }
+
         });
     }
 }

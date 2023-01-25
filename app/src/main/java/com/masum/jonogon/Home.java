@@ -50,7 +50,7 @@ public class Home extends AppCompatActivity {
             public void onClick(View v) {
                 Toast.makeText(getApplicationContext(),"opening Download",Toast.LENGTH_SHORT).show();
 
-                Intent intent=new Intent(Home.this,Downloads.class);
+                Intent intent=new Intent(Home.this,Download.class);
                 startActivity(intent);
             }
         });
