@@ -70,7 +70,7 @@ public class Present_address extends AppCompatActivity {
                 DatePickerDialog datePickerDialog= new DatePickerDialog(Present_address.this, new DatePickerDialog.OnDateSetListener() {
                     @Override
                     public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
-                        dob.setText(SimpleDateFormat.getDateInstance().format(calendar.getTime()));
+                        dob.setText(dayOfMonth+"-"+(month+1)+"-"+year);
 
                     }
                 },year,month,day);

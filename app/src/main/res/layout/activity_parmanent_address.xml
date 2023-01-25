@@ -111,7 +111,7 @@
             android:baselineAligned="false"
             android:hint="Home/Holding"
             android:background="@drawable/circel_style"
-            android:inputType="number"
+            android:inputType="text"
             android:padding="10dp"
             android:textAlignment="center"
             android:textColor="#613636"

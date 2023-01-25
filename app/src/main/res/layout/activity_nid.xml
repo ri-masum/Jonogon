@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".nid"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical">
+
+
+        <ImageView
+            android:layout_width="75dp"
+            android:layout_height="51dp"
+            android:src="@drawable/logo"
+
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="গণপ্রজাতন্ত্রী বাংলাদেশ সরকার"
+            android:textColor="@color/black"
+            android:textSize="20dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Government of the People's Republic of Bangladesh"
+            android:textColor="#08550B"
+            android:textSize="17dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="জাতীয় পরিচয়পত্র/National ID Card"
+            android:textColor="#030403"
+            android:textSize="17dp" />
+
+        <ImageView
+            android:layout_width="190dp"
+            android:layout_height="107dp"
+            android:layout_marginRight="10dp"
+            android:gravity="end"
+            android:src="@drawable/mashrafi"
+
+            />
+
+
+
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:orientation="vertical"
+
+        android:layout_margin="40dp"
+        >
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="90dp"
+                android:text="নাম :"
+                android:textColor="#030403"
+                android:textSize="20dp" />
+            <TextView
+                android:id="@+id/nidname"
+                android:layout_width="100dp"
+                android:textColor="@color/black"
+                android:layout_height="wrap_content"
+                android:hint="name"
+                />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="90dp"
+                android:text="পিতা :"
+                android:textColor="#030403"
+                android:textSize="20dp" />
+            <TextView
+                android:id="@+id/nidfname"
+                android:layout_width="100dp"
+                android:textColor="@color/black"
+                android:layout_height="wrap_content"
+                android:hint="fatherName"
+                />
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="90dp"
+                android:text="মাতা :"
+                android:textColor="#030403"
+                android:textSize="20dp" />
+
+            <TextView
+                android:id="@+id/nidmname"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="80dp"
+                android:hint="motherName"
+                android:textColor="@color/black"
+                />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="130dp"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="90dp"
+                android:text="Date of Birth:"
+                android:textColor="#030403"
+                android:textSize="20dp" />
+
+            <TextView
+                android:id="@+id/niddob"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="80dp"
+                android:hint="dob"
+                android:textColor="@color/black"
+                />
+        </LinearLayout>
+
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="75dp"
+                android:text="NID No."
+                android:textColor="#030403"
+                android:textSize="20dp" />
+            <TextView
+                android:id="@+id/nidnum"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:hint="Nid"
+                />
+
+        </LinearLayout>
+    </LinearLayout>
+
+<EditText
+    android:id="@+id/inputname"
+    android:layout_margin="20dp"
+    android:layout_width="match_parent"
+    android:layout_height="40dp"
+    android:padding="5dp"
+    android:background="@drawable/box_style"
+    android:hint="Name"
+    />
+    <Button
+        android:id="@+id/print1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Print"
+        android:background="@drawable/circel_style_yellow"
+        android:layout_gravity="center"
+        />
+</LinearLayout>
+
+
+
+
+
+
+
+
+
+
+

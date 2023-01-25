@@ -247,7 +247,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:backgroundTint="#43AAD8"
-        android:text="Submit"
+        android:text="Next"
         android:layout_marginTop="150dp"
         android:background="@drawable/box"
         android:textAlignment="center"
