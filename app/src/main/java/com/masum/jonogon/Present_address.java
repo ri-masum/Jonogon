@@ -1,5 +1,7 @@
 package com.masum.jonogon;
 
+import static android.text.TextUtils.isEmpty;
+
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
@@ -187,6 +189,13 @@ public class Present_address extends AppCompatActivity {
                 String PREPostalCode=prepostalcode.getText().toString();//edittext value
 
 
+                //have to code for must input the values in the box
+
+
+
+
+                //upper
+
                 String District=getIntent().getExtras().getString("Baby_District","Baby_District");
                 String Upazila=getIntent().getExtras().getString("Baby_Upazila","Baby_Upazila");
                 String Ward=getIntent().getExtras().getString("Baby_Ward","Baby_Ward");
@@ -223,6 +232,39 @@ public class Present_address extends AppCompatActivity {
 
 
                 //Database worksss
+                if(isEmpty(PREName)){
+                    name.setError("Name can't empty");
+                    name.requestFocus();
+                }
+                else if(isEmpty(PREDOB)){
+                    dob.setError("Select Your BirthDate");
+                    dob.requestFocus();
+
+                }
+                else if(isEmpty(PREHome)){
+                    prehome.setError("Select Your BirthDate");
+                    prehome.requestFocus();
+
+                }
+                else if(isEmpty(PREVillage)){
+                    previllage.setError("Select Your BirthDate");
+                    previllage.requestFocus();
+
+                }
+                else if(isEmpty(PREPostOffice)){
+                    prepostoffice.setError("Select Your BirthDate");
+                    prepostoffice.requestFocus();
+
+                }
+                else if(isEmpty(PREPostalCode)){
+                    prepostalcode.setError("Select Your BirthDate");
+                    prepostalcode.requestFocus();
+
+                }
+
+
+                else{
+
                 firebaseDatabase=FirebaseDatabase.getInstance();
 
                 DatabaseReference root=firebaseDatabase.getReference("Registration");
@@ -293,7 +335,7 @@ public class Present_address extends AppCompatActivity {
                 startActivity(intent);
                 Toast.makeText(Present_address.this,"Successfully Registerd",Toast.LENGTH_SHORT).show();
 
-            }
+            }}
 
         });
     }

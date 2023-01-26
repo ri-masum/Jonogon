@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".birthcard"
-    android:background="@drawable/birthbg"
+    android:background="@drawable/bg4"
     android:padding="6dp"
     android:orientation="vertical">
 
@@ -15,6 +15,7 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal">
         <TextView
+            android:layout_marginTop="40dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="People's Republic of Bangladesh"
@@ -106,7 +107,6 @@
             android:id="@+id/dateofreg"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text=""
             android:textSize="18dp"
             android:textColor="@color/black"
             />

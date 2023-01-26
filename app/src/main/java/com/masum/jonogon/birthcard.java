@@ -17,6 +17,9 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+import java.util.Calendar;
+import java.util.Date;
+
 public class birthcard extends AppCompatActivity {
     TextView registerno,dayofregister,birthid,name,dob,sex,birthplace,parmanetaddr,fname,fnid,fbirthid,fnation,mname,mnid,mbirthid,mnation;
     DatabaseReference reference;
@@ -49,6 +52,9 @@ public class birthcard extends AppCompatActivity {
        B.setOnClickListener(new View.OnClickListener() {
            @Override
            public void onClick(View v) {
+
+
+               //if username is match the further process will be held
                String username = entername.getText().toString();
                if (!username.isEmpty()) {
                    readData(username);
@@ -81,7 +87,11 @@ public class birthcard extends AppCompatActivity {
 
                         DataSnapshot dataSnapshot=task.getResult();
 
+                        //current date show
+                        Date date= Calendar.getInstance().getTime();
+                        dayofregister.setText(date.toString());
 
+                        //value fetch from database
                         String Name=String.valueOf(dataSnapshot.child("prename").getValue());
                         String fatherName=String.valueOf(dataSnapshot.child("fatherName").getValue());
                         String motherName=String.valueOf(dataSnapshot.child("motherName").getValue());

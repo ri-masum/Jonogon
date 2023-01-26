@@ -1,5 +1,7 @@
 package com.masum.jonogon;
 
+import static android.text.TextUtils.isEmpty;
+
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -102,6 +104,42 @@ public class Mother_Father_Info extends AppCompatActivity {
                 String PostalCode=getIntent().getExtras().getString("Baby_Postalcode","Baby_Postalcode");
 
 
+                if(isEmpty(FatherName)){
+                    fathername.setError("FAtherNAme");
+                    fathername.requestFocus();
+                }
+
+                else if(isEmpty(FatherBirthID)){
+                    fatherbirthid.setError("BirthID");
+                    fatherbirthid.requestFocus();
+
+                }
+
+                else if(isEmpty(FatherNID)){
+                    fathernid.setError("NID");
+                    fathernid.requestFocus();
+
+                }
+                else if(isEmpty(MotherName)){
+                    mothername.setError("MotherName");
+                    mothername.requestFocus();
+
+                }
+                else if(isEmpty(MotherNID)){
+                    mothernid.setError("NID");
+                    mothernid.requestFocus();
+
+                }
+                else if(isEmpty(MotherBirthID)){
+                    motherbirthid.setError("BirthID");
+                    motherbirthid.requestFocus();
+
+                }
+                else if(isEmpty(Number)){
+                    phone.setError("Enter your Mobile");
+                    phone.requestFocus();
+
+                }else{
 
                 Intent intent= new Intent(Mother_Father_Info.this,Parmanent_address.class);
                 intent.putExtra("Baby_District",District);
@@ -125,7 +163,7 @@ public class Mother_Father_Info extends AppCompatActivity {
 
 
                 startActivity(intent);
-            }
+            }}
         });
 
         //Mobile number validition check using regex

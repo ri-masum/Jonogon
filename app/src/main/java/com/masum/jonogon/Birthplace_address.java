@@ -131,6 +131,28 @@ public class Birthplace_address extends AppCompatActivity {
 
 
 
+                if(isEmpty(Home)){
+                    home.setError("Enter Home address");
+                    home.requestFocus();
+                }
+
+                else if(isEmpty(Village)){
+                    village.setError("village");
+                    village.requestFocus();
+
+                }
+                else if(isEmpty(PostalCode)){
+                    postalcode.setError("postalcode");
+                    postalcode.requestFocus();
+
+                }
+                else if(isEmpty(PostOffice)){
+                    postoffice.setError("postoffice");
+                    postoffice.requestFocus();
+
+                }
+                else{
+
                 Intent intent= new Intent(Birthplace_address.this,Mother_Father_Info.class);
                 intent.putExtra("Baby_District",District);
                 intent.putExtra("Baby_Upazila",Upazila);
@@ -145,7 +167,7 @@ public class Birthplace_address extends AppCompatActivity {
 
                 startActivity(intent);
 
-            }
+            }}
         });
 
 
