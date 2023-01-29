@@ -268,7 +268,8 @@ public class Present_address extends AppCompatActivity {
                 firebaseDatabase=FirebaseDatabase.getInstance();
 
                 DatabaseReference root=firebaseDatabase.getReference("Registration");
-                all_data helper= new all_data(//baby info PREsent
+                all_data helper= new all_data(
+                        //baby info PREsent
                         PREName,PREDOB,PREGender,PREDistrict,PREUpazila,PREUnion,PREWard,PREHome,PREVillage,PREPostalCode,PREPostOffice,
                         //Father & mother info
                         FatherName,FatherNID,FatherBirthID,FatherNation,

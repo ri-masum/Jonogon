@@ -94,6 +94,7 @@ public class Mother_Father_Info extends AppCompatActivity {
                 String Number=phone.getText().toString();
 
 
+                //received from birth place addres by putting put.extra and here are reaceiving the data by using getExtras
                 String District=getIntent().getExtras().getString("Baby_District","Baby_District");
                 String Upazila=getIntent().getExtras().getString("Baby_Upazila","Baby_Upazila");
                 String Ward=getIntent().getExtras().getString("Baby_Ward","Baby_Ward");

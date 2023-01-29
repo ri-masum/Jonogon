@@ -26,6 +26,7 @@ public class birthcard extends AppCompatActivity {
     EditText entername;
     Button B;
 
+
     @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -90,6 +91,8 @@ public class birthcard extends AppCompatActivity {
                         //current date show
                         Date date= Calendar.getInstance().getTime();
                         dayofregister.setText(date.toString());
+
+
 
                         //value fetch from database
                         String Name=String.valueOf(dataSnapshot.child("prename").getValue());

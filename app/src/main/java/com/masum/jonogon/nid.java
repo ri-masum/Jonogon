@@ -78,10 +78,10 @@ public class nid extends AppCompatActivity {
                         dob.setText(Dob);
 
                         //to if the data is fetching or not
-                        System.out.println("Name: "+Name);
-                        System.out.println("FName: "+fatherName);
-                        System.out.println("MName: "+motherName);
-                        System.out.println("DOB: "+Dob);
+//                        System.out.println("Name: "+Name);
+//                        System.out.println("FName: "+fatherName);
+//                        System.out.println("MName: "+motherName);
+//                        System.out.println("DOB: "+Dob);
 
                     }else {
                         Toast.makeText(nid.this,"username not found",Toast.LENGTH_SHORT).show();
