@@ -73,6 +73,7 @@ public class birthcard extends AppCompatActivity {
 
     }
 
+
     private void readData(String username) {
         reference= FirebaseDatabase.getInstance().getReference("Registration");
         reference.child(username).get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
