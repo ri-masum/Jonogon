@@ -24,6 +24,8 @@ import com.google.firebase.database.FirebaseDatabase;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
+import kotlin.random.URandomKt;
+
 public class Present_address extends AppCompatActivity {
     Spinner district,upazila,ward,union,gender;
     EditText prehome,previllage,prepostoffice,prepostalcode,name;
@@ -31,6 +33,7 @@ public class Present_address extends AppCompatActivity {
     FirebaseDatabase firebaseDatabase;
     TextView dob;
     int year,month,day;
+
 
 
     String[] district1={"Dhaka","Moulvibazer","Chattogram","Sylhet","Kulna","Faridpur","Cumilla"};
@@ -175,6 +178,8 @@ public class Present_address extends AppCompatActivity {
             public void onClick(View v) {
                 //birthplace address
 
+                String  varify= String.valueOf(0);
+
                 String PREName=name.getText().toString();
                 String PREDOB=dob.getText().toString();
                 String PREGender=gender.getSelectedItem().toString();//PAR=Parmanent
@@ -279,7 +284,9 @@ public class Present_address extends AppCompatActivity {
                         PARDistrict,PARUpazila,PARWard,PARUnion,PARHome,PARVillage,PARPostOffice,PARPostalCode,
 
                         //
-                        District,Upazila,Ward,Union,Home,Village,PostOffice,PostalCode);
+                        District,Upazila,Ward,Union,Home,Village,PostOffice,PostalCode,varify
+
+                );
                 root.child(PREName).setValue(helper);
 
                //work roise baki korar so korte hobe eikane kaj aro
@@ -331,6 +338,7 @@ public class Present_address extends AppCompatActivity {
                 intent.putExtra("Baby_PREName",PREName);
                 intent.putExtra("Baby_PREDOB",PREDOB);
                 intent.putExtra("Baby_PREGender",PREGender);
+
 
 
                 startActivity(intent);

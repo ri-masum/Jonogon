@@ -97,3 +97,5 @@ public class nid extends AppCompatActivity {
         });
     }
 }
+//nid number uniq and birth id also
+//next week work

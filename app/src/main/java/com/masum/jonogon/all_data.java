@@ -11,14 +11,16 @@ String PREName,PREDOB,PREGender,PREDistrict,PREUpazila,PREUnion,PREWard,PREHome,
 
     //
     District,Upazila,Ward,Union,Home,Village,PostOffice,PostalCode;
+String varify;
 
-//    public all_data(String fatherNation) {
+
+    //    public all_data(String fatherNation) {
 //        FatherNation = fatherNation;
 //    }
 
 
 
-    public all_data(String PREName, String PREDOB, String PREGender, String PREDistrict, String PREUpazila, String PREUnion, String PREWard, String PREHome, String PREVillage, String PREPostalCode, String PREPostOffice, String fatherName, String fatherNID, String fatherBirthID, String fatherNation, String motherName, String motherNID, String motherBirthID, String motherNation, String number, String PARDistrict, String PARUpazila, String PARWard, String PARUnion, String PARHome, String PARVillage, String PARPostOffice, String PARPostalCode, String district, String upazila, String ward, String union, String home, String village, String postOffice, String postalCode) {
+    public all_data(String PREName, String PREDOB, String PREGender, String PREDistrict, String PREUpazila, String PREUnion, String PREWard, String PREHome, String PREVillage, String PREPostalCode, String PREPostOffice, String fatherName, String fatherNID, String fatherBirthID, String fatherNation, String motherName, String motherNID, String motherBirthID, String motherNation, String number, String PARDistrict, String PARUpazila, String PARWard, String PARUnion, String PARHome, String PARVillage, String PARPostOffice, String PARPostalCode, String district, String upazila, String ward, String union, String home, String village, String postOffice, String postalCode,String varify) {
         this.PREName = PREName;
         this.PREDOB = PREDOB;
         this.PREGender = PREGender;
@@ -55,6 +57,7 @@ String PREName,PREDOB,PREGender,PREDistrict,PREUpazila,PREUnion,PREWard,PREHome,
         Village = village;
         PostOffice = postOffice;
         PostalCode = postalCode;
+        this.varify=varify;
 
     }
 
@@ -345,5 +348,13 @@ String PREName,PREDOB,PREGender,PREDistrict,PREUpazila,PREUnion,PREWard,PREHome,
 
     public void setPostalCode(String postalCode) {
         PostalCode = postalCode;
+    }
+
+    public String getVarify() {
+        return varify;
+    }
+
+    public void setVarify(String varify) {
+        this.varify = varify;
     }
 }
