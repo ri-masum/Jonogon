@@ -27,6 +27,8 @@ import java.util.Calendar;
 import kotlin.random.URandomKt;
 
 public class Present_address extends AppCompatActivity {
+    private long idCounter = 2012020100;
+
     Spinner district,upazila,ward,union,gender;
     EditText prehome,previllage,prepostoffice,prepostalcode,name;
     Button submit;
@@ -61,6 +63,8 @@ public class Present_address extends AppCompatActivity {
         gender=findViewById(R.id.gender);
         dob=findViewById(R.id.dob);
 
+
+        long idNumber = idCounter++;
 
         name=findViewById(R.id.Baby_name);
         final Calendar calendar=Calendar.getInstance();//called Calendar
@@ -179,6 +183,13 @@ public class Present_address extends AppCompatActivity {
                 //birthplace address
 
                 String  varify= String.valueOf(0);
+//nid number given
+
+                long idNumber = idCounter++;
+
+                String nID= String.valueOf(idNumber);
+                System.out.println("Nid : "+idNumber);//end
+
 
                 String PREName=name.getText().toString();
                 String PREDOB=dob.getText().toString();
@@ -233,7 +244,7 @@ public class Present_address extends AppCompatActivity {
 
 
 
-                //next day work will be process from here so lets take some rest 
+                //next day work will be process from here so lets take some rest
 
 
                 //Database worksss
@@ -284,7 +295,7 @@ public class Present_address extends AppCompatActivity {
                         PARDistrict,PARUpazila,PARWard,PARUnion,PARHome,PARVillage,PARPostOffice,PARPostalCode,
 
                         //
-                        District,Upazila,Ward,Union,Home,Village,PostOffice,PostalCode,varify
+                        District,Upazila,Ward,Union,Home,Village,PostOffice,PostalCode,varify,nID
 
                 );
                 root.child(PREName).setValue(helper);

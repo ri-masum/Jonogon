@@ -35,6 +35,7 @@ public class nid extends AppCompatActivity {
         mname=findViewById(R.id.nidmname);
         dob=findViewById(R.id.niddob);
         name1=findViewById(R.id.inputname);
+        nid=findViewById(R.id.nidnum);
         B=findViewById(R.id.print1);
 
         B.setOnClickListener(new View.OnClickListener() {
@@ -71,17 +72,20 @@ public class nid extends AppCompatActivity {
                         String fatherName=String.valueOf(dataSnapshot.child("fatherName").getValue());
                         String motherName=String.valueOf(dataSnapshot.child("motherName").getValue());
                         String Dob=String.valueOf(dataSnapshot.child("predob").getValue());
+                        String NID=String.valueOf(dataSnapshot.child("nID").getValue());
 
                         name.setText(Name);
                         fname.setText(fatherName);
                         mname.setText(motherName);
                         dob.setText(Dob);
+                        nid.setText(NID+1);
 
                         //to if the data is fetching or not
-//                        System.out.println("Name: "+Name);
-//                        System.out.println("FName: "+fatherName);
-//                        System.out.println("MName: "+motherName);
-//                        System.out.println("DOB: "+Dob);
+                        System.out.println("Name: "+Name);
+                        System.out.println("FName: "+fatherName);
+                        System.out.println("MName: "+motherName);
+                        System.out.println("DOB: "+Dob);
+                        System.out.println("NID: "+NID);
 
                     }else {
                         Toast.makeText(nid.this,"username not found",Toast.LENGTH_SHORT).show();
