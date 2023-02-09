@@ -31,13 +31,6 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".nid"
-            android:exported="false">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
-        <activity
             android:name=".Parmanent_address"
             android:exported="false">
             <meta-data

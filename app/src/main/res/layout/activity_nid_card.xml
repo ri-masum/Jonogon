@@ -86,14 +86,11 @@
               </LinearLayout>
 
           </LinearLayout>
-          <LinearLayout
-              android:layout_width="match_parent"
-              android:layout_height="match_parent">
 
-          </LinearLayout>
 
 
       </LinearLayout>
+
 
 
 
@@ -130,29 +127,32 @@
           <LinearLayout
               android:layout_width="wrap_content"
               android:layout_height="wrap_content"
-              android:layout_marginLeft="10dp"
+              android:layout_marginLeft="2dp"
               android:layout_marginTop="10dp"
+
               android:orientation="vertical">
 
               <LinearLayout
-                  android:layout_width="wrap_content"
-                  android:layout_height="wrap_content">
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:orientation="horizontal">
 
                   <TextView
                       android:layout_width="100dp"
                       android:layout_height="wrap_content"
-                      android:layout_marginRight="90dp"
                       android:text="নাম :"
                       android:textColor="#030403"
                       android:textSize="15dp" />
-
                   <TextView
                       android:id="@+id/nidname"
-                      android:layout_width="100dp"
-                      android:layout_height="wrap_content"
+                      android:layout_width="match_parent"
+                      android:layout_height="match_parent"
                       android:hint="name"
+
                       android:textColor="@color/black"
-                      android:textSize="15dp" />
+                      android:textSize="15dp"/>
+
+
               </LinearLayout>
 
               <LinearLayout
@@ -163,14 +163,13 @@
                   <TextView
                       android:layout_width="100dp"
                       android:layout_height="wrap_content"
-                      android:layout_marginRight="90dp"
                       android:text="পিতা :"
                       android:textColor="#030403"
                       android:textSize="15dp" />
 
                   <TextView
                       android:id="@+id/nidfname"
-                      android:layout_width="100dp"
+                      android:layout_width="match_parent"
                       android:layout_height="wrap_content"
                       android:hint="fatherName"
                       android:textColor="@color/black"
@@ -188,14 +187,13 @@
                   <TextView
                       android:layout_width="100dp"
                       android:layout_height="wrap_content"
-                      android:layout_marginRight="90dp"
                       android:text="মাতা :"
                       android:textColor="#030403"
                       android:textSize="15dp" />
 
                   <TextView
                       android:id="@+id/nidmname"
-                      android:layout_width="132dp"
+                      android:layout_width="match_parent"
                       android:layout_height="wrap_content"
                       android:hint="motherName"
                       android:textColor="@color/black"
@@ -212,14 +210,13 @@
                   <TextView
                       android:layout_width="96dp"
                       android:layout_height="wrap_content"
-                      android:layout_marginRight="90dp"
                       android:text="Date of Birth:"
                       android:textColor="#030403"
                       android:textSize="15dp" />
 
                   <TextView
                       android:id="@+id/niddob"
-                      android:layout_width="100dp"
+                      android:layout_width="match_parent"
                       android:layout_height="wrap_content"
                       android:hint="dob"
                       android:textColor="@color/black"
@@ -236,14 +233,13 @@
                   <TextView
                       android:layout_width="100dp"
                       android:layout_height="wrap_content"
-                      android:layout_marginRight="75dp"
                       android:text="NID No."
                       android:textColor="#030403"
                       android:textSize="15dp" />
 
                   <TextView
                       android:id="@+id/nidnum"
-                      android:layout_width="100dp"
+                      android:layout_width="match_parent"
                       android:layout_height="wrap_content"
                       android:hint="Nid"
                       android:textColor="@color/black"

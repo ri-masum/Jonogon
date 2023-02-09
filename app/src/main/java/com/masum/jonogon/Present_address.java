@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
 import android.app.DatePickerDialog;
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -18,23 +19,37 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.Random;
 
 import kotlin.random.URandomKt;
 
 public class Present_address extends AppCompatActivity {
-    private long idCounter = 2012020100;
+     long idCounter = 2012020100;
+
+    Present_address idNumber;
 
     Spinner district,upazila,ward,union,gender;
     EditText prehome,previllage,prepostoffice,prepostalcode,name;
     Button submit;
     FirebaseDatabase firebaseDatabase;
+    FirebaseFirestore firebaseFirestore;
+    FirebaseAuth firebaseAuth;
     TextView dob;
+    ProgressDialog progressDialog;
+
     int year,month,day;
+    //to make the registation buttion disable
+
 
 
 
@@ -62,9 +77,12 @@ public class Present_address extends AppCompatActivity {
         union=findViewById(R.id.present_union);
         gender=findViewById(R.id.gender);
         dob=findViewById(R.id.dob);
+        firebaseAuth=FirebaseAuth.getInstance();
+        firebaseFirestore=FirebaseFirestore.getInstance();
 
+        //don wanna use this anymore so remve korte hobe as soon as
 
-        long idNumber = idCounter++;
+        idCounter =idCounter++;
 
         name=findViewById(R.id.Baby_name);
         final Calendar calendar=Calendar.getInstance();//called Calendar
@@ -182,14 +200,16 @@ public class Present_address extends AppCompatActivity {
             public void onClick(View v) {
                 //birthplace address
 
-                String  varify= String.valueOf(0);
+                //trying to make conditions
+
+                int value=0;
+              String  varify= String.valueOf(value);
 //nid number given
+//
+////trying to make nid numebr
 
-                long idNumber = idCounter++;
-
-                String nID= String.valueOf(idNumber);
-                System.out.println("Nid : "+idNumber);//end
-
+///// Reference to the database
+//                DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference();
 
                 String PREName=name.getText().toString();
                 String PREDOB=dob.getText().toString();
@@ -203,6 +223,8 @@ public class Present_address extends AppCompatActivity {
                 String PREVillage=previllage.getText().toString();//edittext value
                 String PREPostOffice=prepostoffice.getText().toString();//edittext value
                 String PREPostalCode=prepostalcode.getText().toString();//edittext value
+                firebaseAuth= FirebaseAuth.getInstance();
+                firebaseFirestore= FirebaseFirestore.getInstance();
 
 
                 //have to code for must input the values in the box
@@ -280,25 +302,62 @@ public class Present_address extends AppCompatActivity {
 
 
                 else{
+                    //random numebr genarate
+                    //random numnber genarate for birth id
 
-                firebaseDatabase=FirebaseDatabase.getInstance();
+                    Random random= new Random();
+                    int val=random.nextInt(999999999)+20;
+                    String birthId=String.valueOf(val);
+                  System.out.println("random :"+val);
 
-                DatabaseReference root=firebaseDatabase.getReference("Registration");
-                all_data helper= new all_data(
-                        //baby info PREsent
-                        PREName,PREDOB,PREGender,PREDistrict,PREUpazila,PREUnion,PREWard,PREHome,PREVillage,PREPostalCode,PREPostOffice,
-                        //Father & mother info
-                        FatherName,FatherNID,FatherBirthID,FatherNation,
-                        MotherName,MotherNID,MotherBirthID,MotherNation,
-                        Number,
-                        //parmanent address data
-                        PARDistrict,PARUpazila,PARWard,PARUnion,PARHome,PARVillage,PARPostOffice,PARPostalCode,
 
-                        //
-                        District,Upazila,Ward,Union,Home,Village,PostOffice,PostalCode,varify,nID
 
-                );
-                root.child(PREName).setValue(helper);
+                  //random number for nid
+                    Random random1= new Random();
+                    int val1=random1.nextInt(999999999)+20;
+                    String nID=String.valueOf(val1);
+                    System.out.println("Nid number :"+nID);
+
+
+
+
+
+
+                    firebaseDatabase=FirebaseDatabase.getInstance();
+
+                //DatabaseReference root=firebaseDatabase.getReference("Registration");
+                    firebaseFirestore=FirebaseFirestore.getInstance();
+                    firebaseFirestore.collection("Registration").document(FirebaseAuth.getInstance().getUid()).set(new
+
+                            all_data(
+                            //baby info PREsent
+                            PREName,PREDOB,PREGender,PREDistrict,PREUpazila,PREUnion,PREWard,PREHome,PREVillage,PREPostalCode,PREPostOffice,
+                            //Father & mother info
+                            FatherName,FatherNID,FatherBirthID,FatherNation,
+                            MotherName,MotherNID,MotherBirthID,MotherNation,
+                            Number,
+                            //parmanent address data
+                            PARDistrict,PARUpazila,PARWard,PARUnion,PARHome,PARVillage,PARPostOffice,PARPostalCode,
+
+                            //
+                            District,Upazila,Ward,Union,Home,Village,PostOffice,PostalCode,varify,nID,birthId
+
+                    ));
+//                all_data helper= new all_data(
+//                        //baby info PREsent
+//                        PREName,PREDOB,PREGender,PREDistrict,PREUpazila,PREUnion,PREWard,PREHome,PREVillage,PREPostalCode,PREPostOffice,
+//                        //Father & mother info
+//                        FatherName,FatherNID,FatherBirthID,FatherNation,
+//                        MotherName,MotherNID,MotherBirthID,MotherNation,
+//                        Number,
+//                        //parmanent address data
+//                        PARDistrict,PARUpazila,PARWard,PARUnion,PARHome,PARVillage,PARPostOffice,PARPostalCode,
+//
+//                        //
+//                        District,Upazila,Ward,Union,Home,Village,PostOffice,PostalCode,varify,nID,birthId
+//
+//                );
+                //root.child(PREName).setValue(helper);
 
                //work roise baki korar so korte hobe eikane kaj aro
 
@@ -310,7 +369,16 @@ public class Present_address extends AppCompatActivity {
 
                 Intent intent= new Intent(Present_address.this,Home.class);
                 //birthplace declaration
-                intent.putExtra("Baby_District",District);
+                    intent.putExtra("key","submit");
+
+                    //birthid sending donee yeeeeeeeeeee
+                    intent.putExtra("BirthID",birthId);
+                    System.out.println("birthid = "+birthId);
+
+                    intent.putExtra("nID",nID);
+//                    System.out.println("NID="+nID);
+
+                    intent.putExtra("Baby_District",District);
                 intent.putExtra("Baby_Upazila",Upazila);
                 intent.putExtra("Baby_Ward",Ward);
                 intent.putExtra("Baby_Union",Union);
@@ -354,6 +422,7 @@ public class Present_address extends AppCompatActivity {
 
                 startActivity(intent);
                 Toast.makeText(Present_address.this,"Successfully Registerd",Toast.LENGTH_SHORT).show();
+                finish();
 
             }}
 

@@ -83,6 +83,7 @@
 
         <LinearLayout
             android:id="@+id/registation"
+            android:visibility="visible"
             android:layout_width="150dp"
             android:layout_height="100dp"
             android:orientation="vertical"

@@ -12,18 +12,35 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.util.Random;
+
 public class Home extends AppCompatActivity {
     LinearLayout b1,b2,b3,b4;
+   // String data;
 
     @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
+//
+//        data="yes";
+//         data = getIntent().getExtras().getString("key","defaultKey");
+//        System.out.println("data="+data);
+//
+//        if (data=="submit"){
+//            b1.setVisibility(View.INVISIBLE);
+//           // System.out.println("submit value="+d);
+//        }
+
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
         b1=findViewById(R.id.registation);
         b2=findViewById(R.id.status);
         b3=findViewById(R.id.download);
         b4=findViewById(R.id.info);
+
+
         b1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -31,6 +48,7 @@ public class Home extends AppCompatActivity {
 
                 Intent intent=new Intent(Home.this,Birthplace_address.class);
                 startActivity(intent);
+
             }
         });
 
@@ -38,6 +56,8 @@ public class Home extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Toast.makeText(getApplicationContext(),"opening Status",Toast.LENGTH_SHORT).show();
+
+
 
                 Intent intent=new Intent(Home.this,Status.class);
                 startActivity(intent);

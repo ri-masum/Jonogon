@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".birthcard"
-    android:background="@drawable/bg4"
+    android:background="@drawable/birthbg"
     android:padding="6dp"
     android:orientation="vertical">
 
@@ -505,36 +505,7 @@
 
     </LinearLayout>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:gravity="center">
 
-        <EditText
-            android:layout_width="100dp"
-            android:layout_height="25dp"
-            android:background="@drawable/circel_style_yellow"
-            android:id="@+id/entername"
-            android:hint="name"
-            android:textAlignment="center"
-            android:textColor="@color/black"
-
-
-            />
-        <Button
-            android:layout_marginLeft="5dp"
-            android:id="@+id/print2"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:text="print"
-            android:background="@drawable/box_style"
-
-   />
-
-
-
-    </LinearLayout>
 
 
 </LinearLayout>

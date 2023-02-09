@@ -10,6 +10,7 @@ import android.widget.LinearLayout;
 public class Download extends AppCompatActivity {
     LinearLayout b1,b2;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -20,6 +21,11 @@ public class Download extends AppCompatActivity {
         b1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+
+
+
+
                 Intent intent=new Intent(Download.this,birthcard.class);
                 startActivity(intent);
 
@@ -28,7 +34,7 @@ public class Download extends AppCompatActivity {
         b2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent=new Intent(Download.this,nid.class);
+                Intent intent=new Intent(Download.this,nid_Card.class);
                 startActivity(intent);
 
 
