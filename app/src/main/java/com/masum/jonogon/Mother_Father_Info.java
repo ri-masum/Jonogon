@@ -43,6 +43,7 @@ public class Mother_Father_Info extends AppCompatActivity {
         phone=findViewById(R.id.guardian_number);
 
 
+
         spinner1=findViewById(R.id.father_nation);//using for show country list
         spinner2=findViewById(R.id.mother_nation);
         ArrayAdapter<String> adapter=new ArrayAdapter<>(Mother_Father_Info.this, android.R.layout.simple_list_item_1,country);
@@ -110,14 +111,14 @@ public class Mother_Father_Info extends AppCompatActivity {
                     fathername.requestFocus();
                 }
 
-                else if(isEmpty(FatherBirthID)){
-                    fatherbirthid.setError("BirthID");
+                else if(FatherBirthID.length()<=16){
+                    fatherbirthid.setError("BirthId must contain 17 digit");
                     fatherbirthid.requestFocus();
 
                 }
 
-                else if(isEmpty(FatherNID)){
-                    fathernid.setError("NID");
+                else if(FatherNID.length()<=9 ){
+                    fathernid.setError("nid must contain 10 digit");
                     fathernid.requestFocus();
 
                 }
@@ -126,13 +127,13 @@ public class Mother_Father_Info extends AppCompatActivity {
                     mothername.requestFocus();
 
                 }
-                else if(isEmpty(MotherNID)){
-                    mothernid.setError("NID");
+                else if(MotherNID.length()<=9){
+                    mothernid.setError("nid must contain 10 digit");
                     mothernid.requestFocus();
 
                 }
-                else if(isEmpty(MotherBirthID)){
-                    motherbirthid.setError("BirthID");
+                else if(MotherBirthID.length()<=16){
+                    motherbirthid.setError("BirthId must contain 17 digit");
                     motherbirthid.requestFocus();
 
                 }
@@ -140,7 +141,22 @@ public class Mother_Father_Info extends AppCompatActivity {
                     phone.setError("Enter your Mobile");
                     phone.requestFocus();
 
-                }else{
+                } else if (FatherNID.equals(MotherNID)) {
+
+                    fathernid.setError("Mother and father nid can't be same");
+                    mothernid.setError("Mother and father nid can't be same");
+
+                    fathernid.requestFocus();
+                    mothernid.requestFocus();
+
+                } else if (FatherBirthID.equals(MotherBirthID)) {
+                    fatherbirthid.setError("Mother and father BirthID can't be same");
+                    motherbirthid.setError("Mother and father BirthID can't be same");
+                    fatherbirthid.requestFocus();
+                    motherbirthid.requestFocus();
+
+
+                } else{
 
                 Intent intent= new Intent(Mother_Father_Info.this,Parmanent_address.class);
                 intent.putExtra("Baby_District",District);
@@ -166,6 +182,9 @@ public class Mother_Father_Info extends AppCompatActivity {
                 startActivity(intent);
             }}
         });
+
+
+
 
         //Mobile number validition check using regex
         phone.addTextChangedListener(new TextWatcher() {
@@ -193,8 +212,10 @@ public class Mother_Father_Info extends AppCompatActivity {
         });
 
     }
+
+
     //regex for mobile number validation
-    boolean validMobile(String input){
+    boolean validMobile(String input) {
         Pattern p=Pattern.compile("^\\+?(88)?0?1[3456789][0-9]{8}\\b");
         Matcher m=p.matcher(input);
         return  m.matches();

@@ -82,7 +82,7 @@ public class Present_address extends AppCompatActivity {
 
         //don wanna use this anymore so remve korte hobe as soon as
 
-        idCounter =idCounter++;
+        //idCounter =idCounter++;
 
         name=findViewById(R.id.Baby_name);
         final Calendar calendar=Calendar.getInstance();//called Calendar
@@ -343,23 +343,6 @@ public class Present_address extends AppCompatActivity {
                             District,Upazila,Ward,Union,Home,Village,PostOffice,PostalCode,varify,nID,birthId
 
                     ));
-//                all_data helper= new all_data(
-//                        //baby info PREsent
-//                        PREName,PREDOB,PREGender,PREDistrict,PREUpazila,PREUnion,PREWard,PREHome,PREVillage,PREPostalCode,PREPostOffice,
-//                        //Father & mother info
-//                        FatherName,FatherNID,FatherBirthID,FatherNation,
-//                        MotherName,MotherNID,MotherBirthID,MotherNation,
-//                        Number,
-//                        //parmanent address data
-//                        PARDistrict,PARUpazila,PARWard,PARUnion,PARHome,PARVillage,PARPostOffice,PARPostalCode,
-//
-//                        //
-//                        District,Upazila,Ward,Union,Home,Village,PostOffice,PostalCode,varify,nID,birthId
-//
-//                );
-                //root.child(PREName).setValue(helper);
-
-               //work roise baki korar so korte hobe eikane kaj aro
 
 
 

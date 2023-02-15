@@ -8,7 +8,7 @@
     android:orientation="vertical"
 
 
-    android:background="@drawable/bg1"
+android:background="@drawable/bg1"
     >
     <LinearLayout
         android:layout_width="match_parent"
@@ -31,21 +31,26 @@
             android:textSize="35dp"
             android:textStyle="bold"
             android:textAlignment="center"/>
-        <ImageView
-            android:layout_width="70dp"
-            android:layout_height="70dp"
-            android:layout_marginLeft="180dp"
-            android:background="@drawable/ic_baseline_menu_24"
+<!--        <ImageView-->
+<!--            android:layout_width="70dp"-->
+<!--            android:layout_height="70dp"-->
+<!--            android:layout_marginLeft="180dp"-->
+<!--            android:background="@drawable/ic_baseline_menu_24"-->
 
 
 
 
-            />
+<!--            />-->
 
 
 
 
     </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        >
 
     <LinearLayout
         android:layout_width="330dp"
@@ -87,7 +92,7 @@
             android:layout_width="150dp"
             android:layout_height="100dp"
             android:orientation="vertical"
-            android:background="@drawable/button_style">
+            android:background="@drawable/login_style">
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
@@ -118,7 +123,7 @@
             android:layout_width="150dp"
             android:layout_height="100dp"
             android:orientation="vertical"
-            android:background="@drawable/button_style">
+            android:background="@drawable/login_style">
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
@@ -158,7 +163,7 @@
             android:layout_width="150dp"
             android:layout_height="100dp"
             android:orientation="vertical"
-            android:background="@drawable/button_style">
+            android:background="@drawable/login_style">
 
             <ImageView
                 android:layout_width="match_parent"
@@ -191,7 +196,7 @@
             android:layout_width="150dp"
             android:layout_height="100dp"
             android:orientation="vertical"
-            android:background="@drawable/button_style">
+            android:background="@drawable/login_style">
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
@@ -232,6 +237,7 @@
 
 
             />
+    </LinearLayout>
     </LinearLayout>
 
 

@@ -1,6 +1,7 @@
 package com.masum.jonogon;
 
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
@@ -11,6 +12,14 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.util.Random;
 
@@ -41,11 +50,16 @@ public class Home extends AppCompatActivity {
         b4=findViewById(R.id.info);
 
 
+
         b1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                disablebutton();
+
                 Toast.makeText(getApplicationContext(),"opening Registation",Toast.LENGTH_SHORT).show();
 
+                //have to disable the button after form is filled up
                 Intent intent=new Intent(Home.this,Birthplace_address.class);
                 startActivity(intent);
 
@@ -83,6 +97,33 @@ public class Home extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+    }
+
+    private void disablebutton() {
+        FirebaseUser user= FirebaseAuth.getInstance().getCurrentUser();
+        String currentid=user.getUid();
+        DocumentReference reference;
+        FirebaseFirestore firestore=FirebaseFirestore.getInstance();
+
+        reference=firestore.collection("Registration").document(currentid);
+
+        reference.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+            @Override
+            public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                if (task.getResult().exists()){
+                    //b1.setVisibility(View.INVISIBLE);
+                    //to disable the button we have use this set enabled thing
+                    b1.setEnabled(false);
+                    Toast.makeText(getApplicationContext(),"Your already registerd",Toast.LENGTH_SHORT).show();
+
+                }
+
+
+            }
+        });
+
+
 
     }
 }

@@ -4,9 +4,13 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.ProgressDialog;
+import android.graphics.Bitmap;
 import android.os.Bundle;
+import android.os.Environment;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -19,12 +23,18 @@ import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 
+import java.io.File;
+import java.io.FileOutputStream;
+import java.util.Random;
+
 public class nid_Card extends AppCompatActivity {
     TextView name,fname,mname,dob,nid;
-    EditText name1;
+
     Button B;
     DatabaseReference reference;
     ProgressDialog progressDialog;
+    LinearLayout layout;
+
 
 
     @Override
@@ -37,6 +47,15 @@ public class nid_Card extends AppCompatActivity {
         dob=findViewById(R.id.niddob);
         nid=findViewById(R.id.nidnum);
         progressDialog= new ProgressDialog(this);
+        B=findViewById(R.id.downloadnid);
+        layout=findViewById(R.id.niddownlaod);
+        B.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                saveImage();
+            }
+
+        });
 
 
 
@@ -47,6 +66,38 @@ public class nid_Card extends AppCompatActivity {
 
 
     }
+
+    private void saveImage() {
+
+        layout.setDrawingCacheEnabled(true);
+        layout.buildDrawingCache();
+        layout.setDrawingCacheQuality(View.DRAWING_CACHE_QUALITY_HIGH);
+        Bitmap bitmap=layout.getDrawingCache();
+        save(bitmap);
+    }
+
+    private void save(Bitmap bitmap) {
+        Random random1= new Random();
+        int val1=random1.nextInt(999)+20;
+        String  root= Environment.getExternalStorageDirectory().getAbsolutePath();
+        File file= new File(root+"/Download");
+        String fileName= val1+"download.jpg";
+        File myfile=new File(file,fileName);
+
+        try {
+            FileOutputStream fileOutputStream=new FileOutputStream(myfile);
+            bitmap.compress(Bitmap.CompressFormat.JPEG,100,fileOutputStream);
+            fileOutputStream.flush();
+            fileOutputStream.close();
+            Toast.makeText(this, "Saveed your document successfully", Toast.LENGTH_SHORT).show();
+            layout.setDrawingCacheEnabled(false);
+        }catch (Exception e){
+            Toast.makeText(this, "Error: "+e.toString(), Toast.LENGTH_SHORT).show();
+        }
+    }
+
+
+
 
     private void getnid() {
         progressDialog.show();
