@@ -66,7 +66,7 @@ public class Birthplace_address extends AppCompatActivity {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 String value=parent.getItemAtPosition(position).toString();
-                Toast.makeText(Birthplace_address.this,value,Toast.LENGTH_SHORT).show();
+//                Toast.makeText(Birthplace_address.this,value,Toast.LENGTH_SHORT).show();
             }
 
             @Override
@@ -78,7 +78,7 @@ public class Birthplace_address extends AppCompatActivity {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 String value=parent.getItemAtPosition(position).toString();
-                Toast.makeText(Birthplace_address.this,value,Toast.LENGTH_SHORT).show();
+//                Toast.makeText(Birthplace_address.this,value,Toast.LENGTH_SHORT).show();
             }
 
             @Override
@@ -90,7 +90,7 @@ public class Birthplace_address extends AppCompatActivity {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 String value=parent.getItemAtPosition(position).toString();
-                Toast.makeText(Birthplace_address.this,value,Toast.LENGTH_SHORT).show();
+//                Toast.makeText(Birthplace_address.this,value,Toast.LENGTH_SHORT).show();
             }
 
             @Override
@@ -102,7 +102,7 @@ public class Birthplace_address extends AppCompatActivity {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 String value=parent.getItemAtPosition(position).toString();
-                Toast.makeText(Birthplace_address.this,value,Toast.LENGTH_SHORT).show();
+//                Toast.makeText(Birthplace_address.this,value,Toast.LENGTH_SHORT).show();
             }
 
             @Override

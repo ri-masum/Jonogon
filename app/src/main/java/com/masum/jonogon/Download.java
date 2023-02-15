@@ -50,6 +50,7 @@ public class Download extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+
                 Intent intent=new Intent(Download.this,nid_Card.class);
                 startActivity(intent);
 

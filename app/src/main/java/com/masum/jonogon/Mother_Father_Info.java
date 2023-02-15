@@ -54,7 +54,7 @@ public class Mother_Father_Info extends AppCompatActivity {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 String value=parent.getItemAtPosition(position).toString();
-                Toast.makeText(Mother_Father_Info.this,value,Toast.LENGTH_SHORT).show();
+//                Toast.makeText(Mother_Father_Info.this,value,Toast.LENGTH_SHORT).show();
             }
 
             @Override
@@ -68,7 +68,7 @@ public class Mother_Father_Info extends AppCompatActivity {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 String value=parent.getItemAtPosition(position).toString();
-                Toast.makeText(Mother_Father_Info.this,value,Toast.LENGTH_SHORT).show();
+//                Toast.makeText(Mother_Father_Info.this,value,Toast.LENGTH_SHORT).show();
 
             }
 
@@ -143,15 +143,15 @@ public class Mother_Father_Info extends AppCompatActivity {
 
                 } else if (FatherNID.equals(MotherNID)) {
 
-                    fathernid.setError("Mother and father nid can't be same");
-                    mothernid.setError("Mother and father nid can't be same");
+                    fathernid.setError("father nid is matched with mother's");
+                    mothernid.setError("Mother nid is matched with father's");
 
                     fathernid.requestFocus();
                     mothernid.requestFocus();
 
                 } else if (FatherBirthID.equals(MotherBirthID)) {
-                    fatherbirthid.setError("Mother and father BirthID can't be same");
-                    motherbirthid.setError("Mother and father BirthID can't be same");
+                    fatherbirthid.setError(" father BirthID is matched with mother's ");
+                    motherbirthid.setError("Mother birthid is matched with father's");
                     fatherbirthid.requestFocus();
                     motherbirthid.requestFocus();
 

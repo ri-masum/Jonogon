@@ -5,6 +5,8 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -55,13 +57,10 @@ public class Home extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                //this function is make to disable the registration button
+                //hold command/control key  and click on the function it will take you to the disable function
                 disablebutton();
 
-                Toast.makeText(getApplicationContext(),"opening Registation",Toast.LENGTH_SHORT).show();
-
-                //have to disable the button after form is filled up
-                Intent intent=new Intent(Home.this,Birthplace_address.class);
-                startActivity(intent);
 
             }
         });
@@ -117,6 +116,12 @@ public class Home extends AppCompatActivity {
                     b1.setEnabled(false);
                     Toast.makeText(getApplicationContext(),"Your already registerd",Toast.LENGTH_SHORT).show();
 
+                }else {
+                    Toast.makeText(getApplicationContext(),"opening Registation",Toast.LENGTH_SHORT).show();
+
+                    Intent intent=new Intent(Home.this,Birthplace_address.class);
+                    startActivity(intent);
+
                 }
 
 
@@ -125,5 +130,17 @@ public class Home extends AppCompatActivity {
 
 
 
+    }
+    public void onBackPressed() {
+        new AlertDialog.Builder(this)
+                .setMessage("Are you sure you want to exit the app?")
+                .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        finish(); //now yes a click korle direct ber hoye jabe app teke
+                    }
+                })
+                .setNegativeButton("No", null)
+                .show();
     }
 }

@@ -65,7 +65,7 @@ public class Parmanent_address extends AppCompatActivity {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 String value = parent.getItemAtPosition(position).toString();
-                Toast.makeText(Parmanent_address.this, value, Toast.LENGTH_SHORT).show();
+//                Toast.makeText(Parmanent_address.this, value, Toast.LENGTH_SHORT).show();
             }
 
             @Override
@@ -77,7 +77,7 @@ public class Parmanent_address extends AppCompatActivity {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 String value = parent.getItemAtPosition(position).toString();
-                Toast.makeText(Parmanent_address.this, value, Toast.LENGTH_SHORT).show();
+//                Toast.makeText(Parmanent_address.this, value, Toast.LENGTH_SHORT).show();
             }
 
             @Override
@@ -89,7 +89,7 @@ public class Parmanent_address extends AppCompatActivity {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 String value = parent.getItemAtPosition(position).toString();
-                Toast.makeText(Parmanent_address.this, value, Toast.LENGTH_SHORT).show();
+//                Toast.makeText(Parmanent_address.this, value, Toast.LENGTH_SHORT).show();
             }
 
             @Override
@@ -101,7 +101,7 @@ public class Parmanent_address extends AppCompatActivity {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 String value = parent.getItemAtPosition(position).toString();
-                Toast.makeText(Parmanent_address.this, value, Toast.LENGTH_SHORT).show();
+//                Toast.makeText(Parmanent_address.this, value, Toast.LENGTH_SHORT).show();
             }
 
             @Override

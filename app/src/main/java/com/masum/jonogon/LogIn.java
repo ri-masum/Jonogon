@@ -79,7 +79,7 @@ public class LogIn extends AppCompatActivity {
                                     finish();
 
 
-                                    Toast.makeText(LogIn.this," LogIn Successfull", Toast.LENGTH_LONG).show();
+                                    Toast.makeText(LogIn.this," LogIn Successfull", Toast.LENGTH_SHORT).show();
                                     progressDialog.cancel();
 
 

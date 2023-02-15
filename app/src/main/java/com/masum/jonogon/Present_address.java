@@ -150,7 +150,7 @@ public class Present_address extends AppCompatActivity {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 String value=parent.getItemAtPosition(position).toString();
-                Toast.makeText(Present_address.this,value,Toast.LENGTH_SHORT).show();
+//                Toast.makeText(Present_address.this,value,Toast.LENGTH_SHORT).show();
             }
 
             @Override
@@ -162,7 +162,7 @@ public class Present_address extends AppCompatActivity {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 String value=parent.getItemAtPosition(position).toString();
-                Toast.makeText(Present_address.this,value,Toast.LENGTH_SHORT).show();
+//                Toast.makeText(Present_address.this,value,Toast.LENGTH_SHORT).show();
             }
 
             @Override
@@ -174,7 +174,7 @@ public class Present_address extends AppCompatActivity {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 String value=parent.getItemAtPosition(position).toString();
-                Toast.makeText(Present_address.this,value,Toast.LENGTH_SHORT).show();
+//                Toast.makeText(Present_address.this,value,Toast.LENGTH_SHORT).show();
             }
 
             @Override
@@ -186,7 +186,7 @@ public class Present_address extends AppCompatActivity {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 String value=parent.getItemAtPosition(position).toString();
-                Toast.makeText(Present_address.this,value,Toast.LENGTH_SHORT).show();
+//                Toast.makeText(Present_address.this,value,Toast.LENGTH_SHORT).show();
             }
 
             @Override
