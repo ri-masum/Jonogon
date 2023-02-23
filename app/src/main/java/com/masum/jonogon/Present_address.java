@@ -28,8 +28,10 @@ import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Random;
+import java.util.UUID;
 
 import kotlin.random.URandomKt;
 
@@ -49,16 +51,22 @@ public class Present_address extends AppCompatActivity {
 
     int year,month,day;
     //to make the registation buttion disable
+    ArrayList<String > Barisal,Chattogram,Dhaka,Kulna,Mymensingh,Rajshahi,Rangpur,Sylhet;
+
+    ArrayList<String >arrayList_district;
+    ArrayAdapter<String >arrayAdapter_district;
+    ArrayAdapter<String >arrayAdapter_upazila;
+    ArrayList<String >arrayList_upazila;
 
 
 
 
-    String[] district1={"Dhaka","Moulvibazer","Chattogram","Sylhet","Kulna","Faridpur","Cumilla"};
+   // String[] district1={"Dhaka","Moulvibazer","Chattogram","Sylhet","Kulna","Faridpur","Cumilla"};
     String[] gender1={"Male","Female","Other"};
     String[] ward1={"1","2","3","4","5","6","7","8","9"};
     String[] union1={"Joychandi","Prithim pasha","Baramchal","Bhukshimal","Bhatera","Kulaura"};
 
-    String[] upazila1={"Barlekha","Juri","Kamalganj","Kulaura","Moulvibazer_Sadar","Rajnagar","Srimangal"};
+   // String[] upazila1={"Barlekha","Juri","Kamalganj","Kulaura","Moulvibazer_Sadar","Rajnagar","Srimangal"};
 
     @SuppressLint("MissingInflatedId")
     @Override
@@ -85,6 +93,8 @@ public class Present_address extends AppCompatActivity {
         //idCounter =idCounter++;
 
         name=findViewById(R.id.Baby_name);
+        api();
+
         final Calendar calendar=Calendar.getInstance();//called Calendar
         dob.setOnClickListener(new View.OnClickListener() {// dob=date of birth
             @Override
@@ -113,16 +123,6 @@ public class Present_address extends AppCompatActivity {
         adapter0.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         gender.setAdapter(adapter0);//gender
 
-        //district
-        ArrayAdapter<String> adapter=new ArrayAdapter<>(Present_address.this, android.R.layout.simple_list_item_1,district1);
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        district.setAdapter(adapter);//district
-
-        //upazila
-        ArrayAdapter<String> adapter1=new ArrayAdapter<>(Present_address.this, android.R.layout.simple_list_item_1,upazila1);
-        adapter1.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        upazila.setAdapter(adapter1);//upazila
-
         //ward
         ArrayAdapter<String> adapter2=new ArrayAdapter<>(Present_address.this, android.R.layout.simple_list_item_1,ward1);
         adapter2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
@@ -149,8 +149,49 @@ public class Present_address extends AppCompatActivity {
         district.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                String value=parent.getItemAtPosition(position).toString();
-//                Toast.makeText(Present_address.this,value,Toast.LENGTH_SHORT).show();
+                if (position==0){
+                    arrayAdapter_upazila=new ArrayAdapter<>(getApplicationContext(), android.R.layout.simple_list_item_1, Barisal);
+
+
+                } else if (position==1) {
+                    arrayAdapter_upazila =new ArrayAdapter<>(getApplicationContext(), android.R.layout.simple_list_item_1, Chattogram);
+
+
+
+                }
+                else if (position==2) {
+                    arrayAdapter_upazila =new ArrayAdapter<>(getApplicationContext(), android.R.layout.simple_list_item_1, Dhaka);
+
+
+
+                } else if (position==3) {
+                    arrayAdapter_upazila =new ArrayAdapter<>(getApplicationContext(), android.R.layout.simple_list_item_1, Kulna);
+
+
+
+                } else if (position==4) {
+                    arrayAdapter_upazila =new ArrayAdapter<>(getApplicationContext(), android.R.layout.simple_list_item_1, Mymensingh);
+
+
+
+                } else if (position==5) {
+                    arrayAdapter_upazila =new ArrayAdapter<>(getApplicationContext(), android.R.layout.simple_list_item_1, Rajshahi);
+
+
+
+                } else if (position==6) {
+                    arrayAdapter_upazila =new ArrayAdapter<>(getApplicationContext(), android.R.layout.simple_list_item_1, Rangpur);
+
+
+
+                }
+                else if (position==7){
+                    arrayAdapter_upazila =new ArrayAdapter<>(getApplicationContext(), android.R.layout.simple_list_item_1, Sylhet);
+
+
+                }
+                upazila.setAdapter(arrayAdapter_upazila);
+
             }
 
             @Override
@@ -158,18 +199,20 @@ public class Present_address extends AppCompatActivity {
 
             }
         });
-        upazila.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                String value=parent.getItemAtPosition(position).toString();
-//                Toast.makeText(Present_address.this,value,Toast.LENGTH_SHORT).show();
-            }
 
-            @Override
-            public void onNothingSelected(AdapterView<?> parent) {
 
-            }
-        });
+//        upazila.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+//            @Override
+//            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+//                String value=parent.getItemAtPosition(position).toString();
+////                Toast.makeText(Present_address.this,value,Toast.LENGTH_SHORT).show();
+//            }
+//
+//            @Override
+//            public void onNothingSelected(AdapterView<?> parent) {
+//
+//            }
+//        });
         ward.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
@@ -198,7 +241,7 @@ public class Present_address extends AppCompatActivity {
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //birthplace address
+
 
                 //trying to make conditions
 
@@ -302,21 +345,19 @@ public class Present_address extends AppCompatActivity {
 
 
                 else{
-                    //random numebr genarate
-                    //random numnber genarate for birth id
 
-                    Random random= new Random();
-                    int val=random.nextInt(999999999)+20;
-                    String birthId=String.valueOf(val);
-                  System.out.println("random :"+val);
-
+                    //uuid method to create 17 digit number
+                    UUID uuid = UUID.randomUUID();
+                    long val = uuid.getLeastSignificantBits();
+                    String birthId = String.valueOf(Math.abs(val)).substring(0, 17);
+                    System.out.println("birthnumebr :"+birthId);
 
 
-                  //random number for nid
-                    Random random1= new Random();
-                    int val1=random1.nextInt(999999999)+20;
-                    String nID=String.valueOf(val1);
-                    System.out.println("Nid number :"+nID);
+                    //nid 10 digit
+                    UUID uuid1 = UUID.randomUUID();
+                    long val1 = uuid1.getLeastSignificantBits();
+                    String nID = String.valueOf(Math.abs(val1)).substring(0, 10);
+                    System.out.println("NID :"+nID);
 
 
 
@@ -325,7 +366,6 @@ public class Present_address extends AppCompatActivity {
 
                     firebaseDatabase=FirebaseDatabase.getInstance();
 
-                //DatabaseReference root=firebaseDatabase.getReference("Registration");
                     firebaseFirestore=FirebaseFirestore.getInstance();
                     firebaseFirestore.collection("Registration").document(FirebaseAuth.getInstance().getUid()).set(new
 
@@ -410,5 +450,113 @@ public class Present_address extends AppCompatActivity {
             }}
 
         });
+
+
     }
+    private void api()  {
+        //spinner value update one try to fix the issues
+        arrayList_district= new ArrayList<> ();
+        arrayList_district.add("Barisal");
+        arrayList_district.add("Chattogram");
+        arrayList_district.add("Dhaka");
+        arrayList_district.add("Khulna");
+        arrayList_district.add("Mymensingh");
+        arrayList_district.add("Rajshahi");
+        arrayList_district.add("Rangpur");
+        arrayList_district.add("Sylhet");
+        arrayAdapter_district=new ArrayAdapter<>(getApplicationContext(), android.R.layout.simple_list_item_1,arrayList_district);
+
+
+        district.setAdapter(arrayAdapter_district);
+
+        //barisal upazila
+        Barisal=new ArrayList<>();
+        Barisal.add("Bhandaria");
+        Barisal.add("Kawkhali");
+        Barisal.add("Mathbaria");
+        Barisal.add("Nazirpur");
+        Barisal.add("Nesarabad");
+        Barisal.add("Pirojpur Sadar");
+        Barisal.add("Indurkani");
+
+        //Chattogram upazila
+
+        Chattogram=new ArrayList<>();
+        Chattogram.add("Anwara");
+        Chattogram.add("Banshkhali");
+        Chattogram.add("Boalkhali");
+        Chattogram.add("Chandanaish");
+        Chattogram.add("Fatikchhari");
+        Chattogram.add("Hathazari");
+        Chattogram.add("Karnaphuli");
+        Chattogram.add("Lohagara");
+
+        //Dhaka upazila
+        Dhaka=new ArrayList<>();
+        Dhaka.add("Dhaka");
+        Dhaka.add("Keraniganj");
+        Dhaka.add("Nababganj");
+        Dhaka.add("Dohar");
+        Dhaka.add("Savar");
+        Dhaka.add("Dhamrai");
+
+        //kulna upazila
+
+        Kulna=new ArrayList<>();
+        Kulna.add("Bagherhat");
+        Kulna.add("Sathkhira");
+        Kulna.add("Jessore");
+        Kulna.add("Magura");
+        Kulna.add("Jhenaidah");
+        Kulna.add("Narail");
+        Kulna.add("Kushtia");
+        Kulna.add("Chuadanga");
+        Kulna.add("Meherpur");
+
+        //Mymensing upazila
+
+        Mymensingh=new ArrayList<>();
+        Mymensingh.add("Mymensingh Sadar ");
+        Mymensingh.add("Muktagachha");
+        Mymensingh.add("Valuka");
+        Mymensingh.add("Haluaghat");
+        Mymensingh.add("Gouripur");
+        Mymensingh.add("Dhobaura");
+
+        //Rajshahi upazila
+        Rajshahi=new ArrayList<>();
+        Rajshahi.add("Bagmara");
+        Rajshahi.add("Paba ");
+        Rajshahi.add("Charghat");
+        Rajshahi.add("Durgapur");
+        Rajshahi.add("Godagari");
+        Rajshahi.add("Mohanpur");
+
+        //Rangpur upazila
+        Rangpur=new ArrayList<>();
+        Rangpur.add("Pirganj");
+        Rangpur.add("Rangpur");
+        Rangpur.add("Mithapukur");
+        Rangpur.add("Kaunia");
+        Rangpur.add("Gangachhara");
+        Rangpur.add("Rangpur Sadar");
+
+
+
+        //sylhet upazila
+        Sylhet=new ArrayList<>();
+        Sylhet.add("sylhet");
+        Sylhet.add("Barlekha");
+        Sylhet.add("Juri");
+        Sylhet.add("Kamalganj");
+        Sylhet.add("Kulaura");
+        Sylhet.add("Moulvibazer_Sadar");
+        Sylhet.add("Rajnagar");
+        Sylhet.add("sreemangal");
+
+
+
+
+    }
+
 }

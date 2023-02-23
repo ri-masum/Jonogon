@@ -14,17 +14,24 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import java.util.ArrayList;
+
 public class Parmanent_address extends AppCompatActivity {
     Spinner district, upazila, ward, union;
     Button submit;
     EditText parhome, parvillage, parpostoffice, parpostalcode;//for database par=parmanent
+    ArrayList<String > Barisal,Chattogram,Dhaka,Kulna,Mymensingh,Rajshahi,Rangpur,Sylhet;
+
+    ArrayList<String >arrayList_district;
+    ArrayAdapter<String >arrayAdapter_district;
+    ArrayAdapter<String >arrayAdapter_upazila;
+    ArrayList<String >arrayList_upazila;
 
 
-    String[] district1 = {"Dhaka", "Moulvibazer", "Chattogram", "Sylhet", "Kulna", "Faridpur", "Cumilla"};
+
     String[] ward1 = {"1", "2", "3", "4", "5", "6", "7", "8", "9"};
     String[] union1 = {"Joychandi", "Prithim pasha", "Baramchal", "Bhukshimal", "Bhatera", "Kulaura"};
 
-    String[] upazila1 = {"Barlekha", "Juri", "Kamalganj", "Kulaura", "Moulvibazer_Sadar", "Rajnagar", "Srimangal"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,15 +48,73 @@ public class Parmanent_address extends AppCompatActivity {
         upazila = findViewById(R.id.parmanent_upazila);
         ward = findViewById(R.id.parmanent_ward_no);
         union = findViewById(R.id.parmanent_union);
-        //district
-        ArrayAdapter<String> adapter = new ArrayAdapter<>(Parmanent_address.this, android.R.layout.simple_list_item_1, district1);
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        district.setAdapter(adapter);//district
+        //new add hocce eikane so kaj na korle soraia dibo
 
-        //upazila
-        ArrayAdapter<String> adapter1 = new ArrayAdapter<>(Parmanent_address.this, android.R.layout.simple_list_item_1, upazila1);
-        adapter1.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        upazila.setAdapter(adapter1);//upazila
+        api();
+
+//        //district
+//        ArrayAdapter<String> adapter = new ArrayAdapter<>(Parmanent_address.this, android.R.layout.simple_list_item_1, district1);
+//        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+//        district.setAdapter(adapter);//district
+
+//        //upazila
+//        ArrayAdapter<String> adapter1 = new ArrayAdapter<>(Parmanent_address.this, android.R.layout.simple_list_item_1, upazila1);
+//        adapter1.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+//        upazila.setAdapter(adapter1);//upazila
+
+        district.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                if (position==0){
+                    arrayAdapter_upazila=new ArrayAdapter<>(getApplicationContext(), android.R.layout.simple_list_item_1, Barisal);
+
+
+                } else if (position==1) {
+                    arrayAdapter_upazila =new ArrayAdapter<>(getApplicationContext(), android.R.layout.simple_list_item_1, Chattogram);
+
+
+
+                }
+                else if (position==2) {
+                    arrayAdapter_upazila =new ArrayAdapter<>(getApplicationContext(), android.R.layout.simple_list_item_1, Dhaka);
+
+
+
+                } else if (position==3) {
+                    arrayAdapter_upazila =new ArrayAdapter<>(getApplicationContext(), android.R.layout.simple_list_item_1, Kulna);
+
+
+
+                } else if (position==4) {
+                    arrayAdapter_upazila =new ArrayAdapter<>(getApplicationContext(), android.R.layout.simple_list_item_1, Mymensingh);
+
+
+
+                } else if (position==5) {
+                    arrayAdapter_upazila =new ArrayAdapter<>(getApplicationContext(), android.R.layout.simple_list_item_1, Rajshahi);
+
+
+
+                } else if (position==6) {
+                    arrayAdapter_upazila =new ArrayAdapter<>(getApplicationContext(), android.R.layout.simple_list_item_1, Rangpur);
+
+
+
+                }
+                else if (position==7){
+                    arrayAdapter_upazila =new ArrayAdapter<>(getApplicationContext(), android.R.layout.simple_list_item_1, Sylhet);
+
+
+                }
+                upazila.setAdapter(arrayAdapter_upazila);
+
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
 
         //ward
         ArrayAdapter<String> adapter2 = new ArrayAdapter<>(Parmanent_address.this, android.R.layout.simple_list_item_1, ward1);
@@ -61,18 +126,6 @@ public class Parmanent_address extends AppCompatActivity {
         adapter3.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         union.setAdapter(adapter3);//union
 
-        district.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                String value = parent.getItemAtPosition(position).toString();
-//                Toast.makeText(Parmanent_address.this, value, Toast.LENGTH_SHORT).show();
-            }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> parent) {
-
-            }
-        });
         upazila.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
@@ -101,7 +154,7 @@ public class Parmanent_address extends AppCompatActivity {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 String value = parent.getItemAtPosition(position).toString();
-//                Toast.makeText(Parmanent_address.this, value, Toast.LENGTH_SHORT).show();
+                Toast.makeText(Parmanent_address.this, value, Toast.LENGTH_SHORT).show();
             }
 
             @Override
@@ -154,13 +207,14 @@ public class Parmanent_address extends AppCompatActivity {
                     parvillage.requestFocus();
 
                 }
-                else if(isEmpty(PARPostalCode)){
-                    parpostalcode.setError("Select Your postalcode");
+                else if(PostalCode.length()<=3){
+                    parpostalcode.setError("postalcode contain 5 digit");
                     parpostalcode.requestFocus();
 
                 }
-                else if(isEmpty(PARPostOffice)){
-                    parpostoffice.setError("Select Your Postoffice");
+                else if(PostOffice.length()<4){
+
+                    parpostoffice.setError("postoffice invalid");
                     parpostoffice.requestFocus();
 
                 }else{
@@ -198,4 +252,111 @@ public class Parmanent_address extends AppCompatActivity {
         });
 
     }
+    private void api()  {
+        //spinner value update one try to fix the issues
+        arrayList_district= new ArrayList<> ();
+        arrayList_district.add("Barisal");
+        arrayList_district.add("Chattogram");
+        arrayList_district.add("Dhaka");
+        arrayList_district.add("Khulna");
+        arrayList_district.add("Mymensingh");
+        arrayList_district.add("Rajshahi");
+        arrayList_district.add("Rangpur");
+        arrayList_district.add("Sylhet");
+        arrayAdapter_district=new ArrayAdapter<>(getApplicationContext(), android.R.layout.simple_list_item_1,arrayList_district);
+
+
+        district.setAdapter(arrayAdapter_district);
+
+        //barisal upazila
+        Barisal=new ArrayList<>();
+        Barisal.add("Bhandaria");
+        Barisal.add("Kawkhali");
+        Barisal.add("Mathbaria");
+        Barisal.add("Nazirpur");
+        Barisal.add("Nesarabad");
+        Barisal.add("Pirojpur Sadar");
+        Barisal.add("Indurkani");
+
+        //Chattogram upazila
+
+        Chattogram=new ArrayList<>();
+        Chattogram.add("Anwara");
+        Chattogram.add("Banshkhali");
+        Chattogram.add("Boalkhali");
+        Chattogram.add("Chandanaish");
+        Chattogram.add("Fatikchhari");
+        Chattogram.add("Hathazari");
+        Chattogram.add("Karnaphuli");
+        Chattogram.add("Lohagara");
+
+        //Dhaka upazila
+        Dhaka=new ArrayList<>();
+        Dhaka.add("Dhaka");
+        Dhaka.add("Keraniganj");
+        Dhaka.add("Nababganj");
+        Dhaka.add("Dohar");
+        Dhaka.add("Savar");
+        Dhaka.add("Dhamrai");
+
+        //kulna upazila
+
+        Kulna=new ArrayList<>();
+        Kulna.add("Bagherhat");
+        Kulna.add("Sathkhira");
+        Kulna.add("Jessore");
+        Kulna.add("Magura");
+        Kulna.add("Jhenaidah");
+        Kulna.add("Narail");
+        Kulna.add("Kushtia");
+        Kulna.add("Chuadanga");
+        Kulna.add("Meherpur");
+
+        //Mymensing upazila
+
+        Mymensingh=new ArrayList<>();
+        Mymensingh.add("Mymensingh Sadar ");
+        Mymensingh.add("Muktagachha");
+        Mymensingh.add("Valuka");
+        Mymensingh.add("Haluaghat");
+        Mymensingh.add("Gouripur");
+        Mymensingh.add("Dhobaura");
+
+        //Rajshahi upazila
+        Rajshahi=new ArrayList<>();
+        Rajshahi.add("Bagmara");
+        Rajshahi.add("Paba ");
+        Rajshahi.add("Charghat");
+        Rajshahi.add("Durgapur");
+        Rajshahi.add("Godagari");
+        Rajshahi.add("Mohanpur");
+
+        //Rangpur upazila
+        Rangpur=new ArrayList<>();
+        Rangpur.add("Pirganj");
+        Rangpur.add("Rangpur");
+        Rangpur.add("Mithapukur");
+        Rangpur.add("Kaunia");
+        Rangpur.add("Gangachhara");
+        Rangpur.add("Rangpur Sadar");
+
+
+
+        //sylhet upazila
+        Sylhet=new ArrayList<>();
+        Sylhet.add("sylhet");
+        Sylhet.add("Barlekha");
+        Sylhet.add("Juri");
+        Sylhet.add("Kamalganj");
+        Sylhet.add("Kulaura");
+        Sylhet.add("Moulvibazer_Sadar");
+        Sylhet.add("Rajnagar");
+        Sylhet.add("sreemangal");
+
+
+
+
+    }
+
+
 }

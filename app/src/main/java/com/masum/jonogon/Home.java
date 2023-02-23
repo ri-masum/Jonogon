@@ -133,6 +133,7 @@ public class Home extends AppCompatActivity {
     }
     public void onBackPressed() {
         new AlertDialog.Builder(this)
+                .setTitle("Quit")
                 .setMessage("Are you sure you want to exit the app?")
                 .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
                     @Override

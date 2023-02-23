@@ -173,6 +173,7 @@
             android:layout_marginLeft="20dp"
             android:baselineAligned="false"
             android:hint="Postal Code"
+            android:maxLength="5"
             android:inputType="number"
             android:background="@drawable/circel_style"
 
