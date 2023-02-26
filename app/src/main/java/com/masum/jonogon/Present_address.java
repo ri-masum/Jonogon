@@ -36,7 +36,7 @@ import java.util.UUID;
 import kotlin.random.URandomKt;
 
 public class Present_address extends AppCompatActivity {
-     long idCounter = 2012020100;
+     long idCounter = 2012020100;//its not using in the app but not removing it because connected with database
 
     Present_address idNumber;
 
@@ -332,7 +332,7 @@ public class Present_address extends AppCompatActivity {
                     previllage.requestFocus();
 
                 }
-                else if(isEmpty(PREPostOffice)){
+                else if(PREPostalCode.length()<=3){
                     prepostoffice.setError("Select Your BirthDate");
                     prepostoffice.requestFocus();
 
@@ -350,14 +350,12 @@ public class Present_address extends AppCompatActivity {
                     UUID uuid = UUID.randomUUID();
                     long val = uuid.getLeastSignificantBits();
                     String birthId = String.valueOf(Math.abs(val)).substring(0, 17);
-                    System.out.println("birthnumebr :"+birthId);
 
 
                     //nid 10 digit
                     UUID uuid1 = UUID.randomUUID();
                     long val1 = uuid1.getLeastSignificantBits();
                     String nID = String.valueOf(Math.abs(val1)).substring(0, 10);
-                    System.out.println("NID :"+nID);
 
 
 
@@ -400,8 +398,7 @@ public class Present_address extends AppCompatActivity {
 
                     intent.putExtra("nID",nID);
 //                    System.out.println("NID="+nID);
-
-                    intent.putExtra("Baby_District",District);
+                   intent.putExtra("Baby_District",District);
                 intent.putExtra("Baby_Upazila",Upazila);
                 intent.putExtra("Baby_Ward",Ward);
                 intent.putExtra("Baby_Union",Union);

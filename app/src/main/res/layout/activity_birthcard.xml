@@ -332,7 +332,7 @@
 
         <TextView
             android:id="@+id/fathernid"
-            android:layout_width="76dp"
+            android:layout_width="match_parent"
             android:textSize="18dp"
 
             android:layout_height="wrap_content"
@@ -473,7 +473,7 @@
 
         <TextView
             android:id="@+id/mbirthid"
-            android:layout_width="120dp"
+            android:layout_width="match_parent"
             android:layout_marginTop="8dp"
             android:textSize="18dp"
 

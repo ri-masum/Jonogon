@@ -9,6 +9,7 @@ public class UserModel {
         this.rpass = rpass;
     }
 
+
     public String getRname() {
         return rname;
     }

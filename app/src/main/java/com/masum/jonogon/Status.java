@@ -40,16 +40,24 @@ public class Status extends AppCompatActivity {
                 DocumentSnapshot dataSnapshot = task.getResult();
 
                 String Varify = task.getResult().getString("varify");
-                int intVarify = Integer.parseInt(Varify);
-               if (intVarify==1){
+                if (task.getResult().exists()){
+                    int intVarify = Integer.parseInt(Varify);
+                    if (intVarify==1){
 
 
                         textView.setText("You Can download Your certificate now ");
 
+                    }
+                    else if (intVarify==0){
+                        textView.setText("Processing");
+                    }
+
+
+                }else {
+                    textView.setText("You Haven't Registered yet ");
+
                 }
-               else if (task.getResult().exists()){
-                    textView.setText(" Processing");
-                }
+
 
             }
         }).addOnFailureListener(new OnFailureListener() {

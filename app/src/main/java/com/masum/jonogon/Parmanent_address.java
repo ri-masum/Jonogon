@@ -207,7 +207,8 @@ public class Parmanent_address extends AppCompatActivity {
                     parvillage.requestFocus();
 
                 }
-                else if(PostalCode.length()<=3){
+                else if(PARPostalCode
+                        .length()<=3){
                     parpostalcode.setError("postalcode contain 5 digit");
                     parpostalcode.requestFocus();
 

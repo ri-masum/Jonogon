@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@drawable/bg1"
+    android:background="#DEEFF8"
     >
 
 
@@ -127,8 +127,9 @@
             android:layout_width="180dp"
             android:layout_height="50dp"
             android:layout_marginLeft="20dp"
-            android:baselineAligned="false"
             android:hint="Village/area/Town"
+            android:digits="abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+
             android:background="@drawable/circel_style"
             android:inputType="text"
             android:padding="7dp"
@@ -151,7 +152,6 @@
             android:layout_width="180dp"
             android:layout_height="50dp"
 
-            android:baselineAligned="false"
             android:hint="Post Office"
             android:background="@drawable/circel_style"
             android:inputType="text"
@@ -198,7 +198,7 @@
 
             android:baselineAligned="false"
             android:hint="Full_Name"
-            android:background="@drawable/circel_style_yellow"
+            android:background="@drawable/circel_style"
             android:inputType="text"
             android:digits="abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 
@@ -221,7 +221,7 @@
             android:inputType="none"
 
 
-            android:background="@drawable/circel_style_yellow"
+            android:background="@drawable/circel_style"
 
             android:padding="7dp"
             android:textAlignment="center"
@@ -302,7 +302,6 @@
         android:layout_gravity="center"
         android:layout_height="50dp"
         android:background="@drawable/circel_style_color"
-        android:autofillHints="District*"
 
         />
 

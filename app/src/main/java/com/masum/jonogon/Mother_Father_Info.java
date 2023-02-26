@@ -167,6 +167,7 @@ public class Mother_Father_Info extends AppCompatActivity {
                 intent.putExtra("Baby_Village",Village);
                 intent.putExtra("Baby_Postoffice",PostOffice);
                 intent.putExtra("Baby_Postalcode",PostalCode);
+
                 intent.putExtra("Baby_FatherName",FatherName);
                 intent.putExtra("Baby_FatherNID",FatherNID);
                 intent.putExtra("Baby_FatherBirthID",FatherBirthID);

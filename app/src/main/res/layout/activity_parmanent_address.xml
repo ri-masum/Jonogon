@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@drawable/bg1"
+    android:background="#DEEFF8"
     >
 
 
@@ -130,6 +130,8 @@
             android:baselineAligned="false"
             android:hint="Village/area/Town"
             android:background="@drawable/circel_style"
+            android:digits="abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+
             android:inputType="text"
             android:padding="7dp"
             android:textAlignment="center"
@@ -151,8 +153,8 @@
             android:layout_width="180dp"
             android:layout_height="50dp"
 
-            android:baselineAligned="false"
             android:hint="Post Office"
+            android:digits="abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 
             android:background="@drawable/circel_style"
             android:inputType="text"

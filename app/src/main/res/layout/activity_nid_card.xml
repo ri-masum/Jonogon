@@ -224,7 +224,7 @@
                       android:layout_width="match_parent"
                       android:layout_height="wrap_content"
                       android:hint="dob"
-                      android:textColor="@color/black"
+                      android:textColor="#EA0E0E"
 
                       android:textSize="15dp" />
               </LinearLayout>
@@ -247,7 +247,7 @@
                       android:layout_width="match_parent"
                       android:layout_height="wrap_content"
                       android:hint="Nid"
-                      android:textColor="@color/black"
+                      android:textColor="#F60606"
                       android:textSize="15dp"
 
                       />

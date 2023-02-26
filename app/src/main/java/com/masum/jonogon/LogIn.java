@@ -45,7 +45,9 @@ public class LogIn extends AppCompatActivity {
         login=findViewById(R.id.login);
         email=findViewById(R.id.lemail);
         pass=findViewById(R.id.lpassword);
+
         firebaseAuth=FirebaseAuth.getInstance();
+
         progressDialog= new ProgressDialog(this);
         supbutton.setOnClickListener(new View.OnClickListener() {
             @Override

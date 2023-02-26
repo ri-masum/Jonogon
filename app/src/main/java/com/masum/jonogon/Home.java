@@ -45,6 +45,7 @@ public class Home extends AppCompatActivity {
 
 
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_home);
         b1=findViewById(R.id.registation);
         b2=findViewById(R.id.status);
@@ -100,6 +101,7 @@ public class Home extends AppCompatActivity {
     }
 
     private void disablebutton() {
+
         FirebaseUser user= FirebaseAuth.getInstance().getCurrentUser();
         String currentid=user.getUid();
         DocumentReference reference;

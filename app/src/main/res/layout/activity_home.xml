@@ -31,18 +31,6 @@ android:background="@drawable/bg1"
             android:textSize="35dp"
             android:textStyle="bold"
             android:textAlignment="center"/>
-<!--        <ImageView-->
-<!--            android:layout_width="70dp"-->
-<!--            android:layout_height="70dp"-->
-<!--            android:layout_marginLeft="180dp"-->
-<!--            android:background="@drawable/ic_baseline_menu_24"-->
-
-
-
-
-<!--            />-->
-
-
 
 
     </LinearLayout>
@@ -88,7 +76,6 @@ android:background="@drawable/bg1"
 
         <LinearLayout
             android:id="@+id/registation"
-            android:visibility="visible"
             android:layout_width="150dp"
             android:layout_height="100dp"
             android:orientation="vertical"

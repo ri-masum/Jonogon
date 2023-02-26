@@ -1,0 +1,47 @@
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" android:layout_width="match_parent" android:layout_height="wrap_content" app:cardCornerRadius="10dp" android:elevation="8dp" app:cardUseCompatPadding="true">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="15dp">
+
+        <ImageView
+            android:id="@+id/img1"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:src="@drawable/button_style" />
+
+        <TextView
+            android:id="@+id/name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@id/img1"
+            android:text="Name"
+            android:textColor="#000"
+            android:textSize="25sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/name"
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@id/img1"
+            android:text="email"
+            android:textColor="#000"
+            android:textSize="25sp" />
+
+        <TextView
+            android:id="@+id/number"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/email"
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@id/img1"
+            android:text="number"
+            android:textColor="#000"
+            android:textSize="25sp" />
+    </RelativeLayout>
+</androidx.cardview.widget.CardView>

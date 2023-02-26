@@ -61,7 +61,9 @@
                 android:layout_margin="30dp"
                 android:padding="15dp"
 
-                tools:ignore="InvalidId" />
+                tools:ignore="InvalidId"
+
+                />
             <EditText
                 android:id="@+id/lpassword"
                 android:layout_width="match_parent"

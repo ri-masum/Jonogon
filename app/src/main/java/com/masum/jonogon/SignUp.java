@@ -33,10 +33,13 @@ public class SignUp extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_up);
+
         regname=findViewById(R.id.name);
+
         regemail=findViewById(R.id.email);
         regpass=findViewById(R.id.password);
         signup=findViewById(R.id.join);
+
         progressDialog= new ProgressDialog(this);
         firebaseAuth = FirebaseAuth.getInstance();
         firebaseFirestore= FirebaseFirestore.getInstance();

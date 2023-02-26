@@ -107,9 +107,15 @@ public class Download extends AppCompatActivity {
                     @Override
                     public void onComplete(@NonNull Task<DocumentSnapshot> task) {
                         if (task.getResult().exists()){
+
                             DocumentSnapshot dataSnapshot = task.getResult();
                             //birth date fetching
 
+//
+//                            String Varify1 = task.getResult().getString("varify");
+//                            int intVarify1 = Integer.parseInt(Varify1);
+//                            System.out.println("IntValue of Varify:"+intVarify1);
+////
                             String DOB = task.getResult().getString("predob");
                             SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
 
@@ -129,13 +135,13 @@ public class Download extends AppCompatActivity {
 
                             System.out.println("your Age is :"+age);
 
-//                            if (today.get(Calendar.MONTH) < dob.get(Calendar.MONTH)) {
-//                                age--;
-//                            } else if (today.get(Calendar.MONTH) == dob.get(Calendar.MONTH)
-//                                    && today.get(Calendar.DAY_OF_MONTH) < dob.get(Calendar.DAY_OF_MONTH)) {
-//                                age--;
-//                            }
-                            if (age >= 18) {
+                            if (today.get(Calendar.MONTH) < dob.get(Calendar.MONTH)) {
+                                age--;
+                            } else if (today.get(Calendar.MONTH) == dob.get(Calendar.MONTH)
+                                    && today.get(Calendar.DAY_OF_MONTH) < dob.get(Calendar.DAY_OF_MONTH)) {
+                                age--;
+                            }
+                            if (age >=18) {
                                 Intent intent = new Intent(Download.this, nid_Card.class);
                                 startActivity(intent);
                             }

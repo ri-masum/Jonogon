@@ -226,6 +226,7 @@ public class Birthplace_address extends AppCompatActivity {
                 else{
 
                 Intent intent= new Intent(Birthplace_address.this,Mother_Father_Info.class);
+
                 intent.putExtra("Baby_District",District);
                 intent.putExtra("Baby_Upazila",Upazila);
                 intent.putExtra("Baby_Ward",Ward);
